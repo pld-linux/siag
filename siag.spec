@@ -26,7 +26,7 @@ Egon.
 %build
 autoconf
 CFLAGS="$RPM_OPT_FLAGS -I/usr/include/db1" ./configure --prefix=/usr
-make -DNDBM
+make 
 
 %install
 rm -rf $RPM_BUILD_ROOT

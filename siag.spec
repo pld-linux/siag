@@ -30,7 +30,6 @@ BuildRequires:	ncurses-devel
 #BuildRequires:	tcl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 Siag Office is a tightly integrated, fast and free office package. It

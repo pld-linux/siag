@@ -1,19 +1,19 @@
 Summary:	Siag Office
 Name:		siag
 Version:	3.3.11
-Release:	0
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(pl):	X11/Aplikacje
 Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.bz2
 Source1:	gvu.desktop
-Source2:	siag.desktop
+Source2:	%{name}.desktop
 Source3:	xfiler.desktop
 Source4:	egon.desktop
 Source5:	pw.desktop
 Source6:	xedplus.desktop
 URL:		http://siag.nu/
-Patch0:		siag-ref_expander-bug.patch
+Patch0:		%{name}-ref_expander-bug.patch
 #BuildRequires:	tcl-devel
 #BuildRequires:	python-devel
 BuildRequires:	XFree86-devel
@@ -236,6 +236,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Office/{Editors,Spreadsheets,Wordprocessors}
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Utilities
+install -d $RPM_BUILD_ROOT%{_datadir}/siag/examples/{pw,siag,egon}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers
 install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Office/Spreadsheets
 install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Utilities
@@ -243,6 +244,9 @@ install %{SOURCE4} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 install %{SOURCE5} $RPM_BUILD_ROOT%{_applnkdir}/Office/Wordprocessors
 install %{SOURCE6} $RPM_BUILD_ROOT%{_applnkdir}/Office/Editors
 
+install pw/examples/*.{doc,pw,html,rtf,txt,bmk} $RPM_BUILD_ROOT%{_datadir}/siag/examples/pw
+install siag/examples/*.{wk1,siag,csv} $RPM_BUILD_ROOT%{_datadir}/siag/examples/siag
+install egon/examples/*.egon $RPM_BUILD_ROOT%{_datadir}/siag/examples/egon
 
 gzip -9nf AUTHORS ChangeLog FILES NEWS NLS README \
           {common,xcommon,siag,pw,egon,siod}/docs/* \
@@ -455,7 +459,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc siag/docs/siag.gif.gz
 %doc siag/docs/siag.html.gz
 %doc siag/docs/strings.html.gz
-#%doc siag/examples/*
+%{_datadir}/siag/examples/siag/*
 %{_mandir}/man1/siag.1*
 %{_applnkdir}/Office/Spreadsheets/siag.desktop
 
@@ -484,7 +488,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc pw/docs/spell.html.gz
 %doc pw/docs/strings.html.gz
 %doc pw/docs/toolbar.html.gz
-#%doc pw/examples/*
+%{_datadir}/siag/examples/pw/*
 %{_mandir}/man1/pw.1*
 %{_applnkdir}/Office/Wordprocessors/pw.desktop
 
@@ -512,7 +516,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc egon/docs/scrollbars.html.gz
 %doc egon/docs/strings.html.gz
 %doc egon/docs/toolbar.html.gz
-#%doc egon/examples/*
+%{_datadir}/siag/examples/egon/*
 %{_mandir}/man1/egon.1*
 %{_applnkdir}/Graphics/egon.desktop
 

@@ -28,7 +28,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix		/usr/X11R6
 
 %description
-Siag Office is a tightly integrated, free office package. It consists
+Siag Office is a tightly integrated, fast and free office package. It consists
 of the spreadsheet Siag, the word processor PW, the animation program
 Egon, the text editor XedPlus, the file manager Xfiler and the
 previewer Gvu.
@@ -36,7 +36,7 @@ previewer Gvu.
 Install this package if you want to use any of Siag Office programs.
 
 %description -l pl
-Siag Office jest ¶ci¶le zintegrowanym, darmowym pakietem biurowym.
+Siag Office jest ¶ci¶le zintegrowanym, szybkim darmowym pakietem biurowym.
 Sk³ada siê z arkusza kalkulacyjnego Siag, procesora tekstów PW,
 programu do animacji egon, edytora tekstowego XedPlus, mened¿era
 plików Xfiler oraz przegl±darki Gvu.
@@ -235,8 +235,8 @@ pod X window.
 
 %build
 CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
-%configure
-%{__make} 
+%configure2_13
+%{__make} CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -427,7 +427,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files siag
 %defattr(644,root,root,755)
-%doc siag/docs/BUGS.gz
 %doc siag/docs/README.gz
 %doc siag/docs/TODO.gz
 %doc siag/docs/c-expr.html.gz

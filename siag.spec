@@ -101,13 +101,13 @@ Group(pl):	X11/Aplikacje
 It contains some plugins for Siag Office package (there are some more
 not mentioned here):
 
-- The Image Plugin It displays most common image formats if the NETPBM
+- The Image Plugin - It displays most common image formats if the NETPBM
   collection of graphics converters is installed. Otherwise it will be
   able to display XPM images.
-- The Dummy Plugin The dummy application works as a "shim" between
+- The Dummy Plugin - The dummy application works as a "shim" between
   Siag and another application. It speaks the plugin protocol with Siag
   and does its best to manage the external application.
-- The Hello Plugin This one is for demonstrational purposes only: it
+- The Hello Plugin - This one is for demonstrational purposes only: it
   displays the message "Hello, World" in its window. It is suitable as
   an example of a simple plugin, in that it contains all the necessary
   code to make a plugin of a normal X program.
@@ -124,8 +124,8 @@ process files. It is a part of free Siag Office package.
 
 %package -n XawM
 Summary:	Modified version of X athena widgets in 3d (Xaw3d)
-Group:		X11/Applications
-Group(pl):	X11/Aplikacje
+Group:		X11/Libraries
+Group(pl):	X11/Biblioteki
 
 %description -n XawM
 XawM is modified version of X athena widgets in 3d (Xaw3d). It adds 3d
@@ -143,7 +143,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf {common,siag,pw,egon,siod}/docs/* xed/{README,TODO,xedplus.html} \
+gzip -9nf AUTHORS ChangeLog FILES NEWS NLS README \
+          {common,siag,pw,egon,siod}/docs/* xed/{README,TODO,xedplus.html} \
           xfiler/{README,TODO,xfiler.html} plugins/{README,TODO} \
 	  XawM/README{,.Linux,.XAW3D,.XawM} $RPM_BUILD_ROOT%{_mandir}/man1/*
 
@@ -175,8 +176,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/siod/siod.scm
 %{_datadir}/siag/xcommon/StringDefs.scm
 %{_datadir}/siag/xcommon/form.scm
-#FILES need patching, GZIP HERE!!!
-%doc AUTHORS ChangeLog FILES NEWS NLS README
+#FILES need patching
+%doc AUTHORS.gz ChangeLog.gz FILES.gz NEWS.gz NLS.gz README.gz
 %doc common/docs/Copyright.gz
 %doc common/docs/credits.html.gz
 %doc common/docs/embedding.html.gz

@@ -221,19 +221,14 @@ CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Office/{Spreadsheets,Wordprocessors} \
-	$RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers \
-	$RPM_BUILD_ROOT{%{_applnkdir}/{Editors,Utilities},%{_pixmapsdir}} \
+install -d $RPM_BUILD_ROOT%{_pixmapsdir} \
+	$RPM_BUILD_ROOT%{_desktopdir} \
 	$RPM_BUILD_ROOT%{_datadir}/siag/examples/{pw,siag,egon}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers
-install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Office/Spreadsheets
-install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Utilities
-install %{SOURCE4} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
-install %{SOURCE5} $RPM_BUILD_ROOT%{_applnkdir}/Office/Wordprocessors
-install %{SOURCE6} $RPM_BUILD_ROOT%{_applnkdir}/Editors
+install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} \
+	$RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE7} %{SOURCE8} %{SOURCE9} %{SOURCE10} %{SOURCE11} %{SOURCE12} \
 	$RPM_BUILD_ROOT%{_pixmapsdir}
 
@@ -382,7 +377,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/siag.xpm
 %{_datadir}/siag/examples/siag/*
 %{_mandir}/man1/siag.1*
-%{_applnkdir}/Office/Spreadsheets/siag.desktop
+%{_desktopdir}
 %{_pixmapsdir}/siag.png
 
 %files pw
@@ -400,7 +395,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/hfull.xpm
 %{_datadir}/siag/examples/pw/*
 %{_mandir}/man1/pw.1*
-%{_applnkdir}/Office/Wordprocessors/pw.desktop
+%{_desktopdir}
 %{_pixmapsdir}/pw.png
 
 %files egon
@@ -416,7 +411,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/egon.xpm
 %{_datadir}/siag/examples/egon/*
 %{_mandir}/man1/egon.1*
-%{_applnkdir}/Graphics/egon.desktop
+%{_desktopdir}
 %{_pixmapsdir}/egon.png
 
 %files xedplus
@@ -425,7 +420,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xedplus
 %{_datadir}/siag/common/bitmaps/xedplus.xpm
 %{_mandir}/man1/xedplus.1*
-%{_applnkdir}/Editors/xedplus.desktop
+%{_desktopdir}
 %{_pixmapsdir}/xedplus.png
 
 %files xfiler
@@ -439,7 +434,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/xfiler.xpm
 %{_mandir}/man1/xfiler.1*
 %{_mandir}/man1/runcmd.1*
-%{_applnkdir}/Utilities/xfiler.desktop
+%{_desktopdir}
 %{_pixmapsdir}/xfiler.png
 #BITMAPS MISSING!!!
 
@@ -463,5 +458,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gvu
 %{_datadir}/siag/common/bitmaps/gvu.xpm
 %{_mandir}/man1/gvu.1*
-%{_applnkdir}/Graphics/Viewers/gvu.desktop
+%{_desktopdir}
 %{_pixmapsdir}/gvu.png

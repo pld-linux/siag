@@ -1,11 +1,11 @@
 Summary:	Siag Office
 Name:		siag
-Version:	3.3.7
+Version:	3.3.10
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(pl):	X11/Aplikacje
-Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.bz2
+Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.gz
 URL:		http://siag.nu/
 #When builded with script languages enable those
 #BuildRequires:	tcl-devel
@@ -37,11 +37,11 @@ Egon.
 %build
 #is it really needed?
 autoconf
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr
+CFLAGS="$RPM_OPT_FLAGS -I%{_includedir}/ncurses" ./configure --prefix=/usr
 %{__make} 
 #it is necessary if you are building siag and have installed older version
 cd XawM
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr
+CFLAGS="$RPM_OPT_FLAGS -I%{_includedir}/ncurses" ./configure --prefix=/usr
 cd ..
 
 %install

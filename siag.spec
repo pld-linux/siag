@@ -4,8 +4,6 @@ Version:	3.4.10
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(pl):	X11/Aplikacje
 Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.gz
 Source1:	gvu.desktop
 Source2:	%{name}.desktop
@@ -45,8 +43,6 @@ plików Xfiler oraz przegl±darki Gvu.
 Summary:	Scheme In A Grid - Siag Office spreadsheet
 Summary(pl):	Scheme In A Grid - arkusz kalkulacyjny Siag Office
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(pl):	X11/Aplikacje
 
 %description siag
 Siag is a spreadsheet based on X and Scheme. It has many, many
@@ -73,8 +69,6 @@ Microsoft Excel.
 Summary:	Pathetic Writer - Siag Office word processor
 Summary(pl):	Pathetic Writer - procesor tekstów Siag Office
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(pl):	X11/Aplikacje
 
 %description pw
 Pathetic Writer is an X-based word processor for Unix. It is a part of
@@ -95,8 +89,6 @@ RTF. Niektóre z nich w ymagaj± zewnêtrznego konwertera o nazwie WV.
 Summary:	Egon Animator - Siag Office animation software
 Summary(pl):	Egon Animator - oprogramowanie do animacji Siag Office
 Group:		X11/Applications/Graphics
-Group(de):	X11/Applikationen/Grafik
-Group(pl):	X11/Aplikacje/Grafika
 
 %description egon
 Egon Animator is an X-based animation development tool for Unix. The
@@ -128,9 +120,6 @@ pamiêci.
 Summary:	Siag Office simple but powerful text editor
 Summary(pl):	Prosty lecz wydajny edytor tekstów Siag Office
 Group:		X11/Applications/Editors
-Group(de):	X11/Applikationen/Editors
-Group(pl):	X11/Aplikacje/Edytory
-Group(pt):	X11/Aplicações/Editores
 
 %description xedplus
 Simple text editor for editing config files or source code. It
@@ -146,8 +135,6 @@ wywo³aæ seda. Xedplus jest czê¶ci± pakietu biurowego Siag Office.
 Summary:	Siag Office file manager
 Summary(pl):	Mened¿er plików Siag Office
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(pl):	X11/Aplikacje
 
 %description xfiler
 Simple and easy to use file manager. It contains basic commands to
@@ -162,8 +149,6 @@ u¿ytkownika. Xfiler jest czê¶ci± pakietu biurowego Siag Office.
 %package plugins
 Summary:	Plugins to use with Siag Office package
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(pl):	X11/Aplikacje
 
 %description plugins
 It contains some plugins for Siag Office package (there are some more
@@ -198,8 +183,6 @@ trochê wiêcej ni¿ opisanych tutaj):
 Summary:	Siag Office graphics previewer
 Summary(pl):	Przegl±darka graficzna Siag Office
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(pl):	X11/Aplikacje
 
 %description gvu
 Gvu allows you to easily view Postscript (*.ps) and Encapsulated
@@ -216,14 +199,6 @@ Siag Office.
 Summary:	Modified version of X athena widgets in 3d (Xaw3d)
 Summary(pl):	Zmodyfikowana wersja trójwymiarowych widgetów athena.
 Group:		X11/Libraries
-Group(de):	X11/Libraries
-Group(es):	X11/Bibliotecas
-Group(fr):	X11/Librairies
-Group(pl):	X11/Biblioteki
-Group(pt_BR):	X11/Bibliotecas
-Group(pt):	X11/Bibliotecas
-Group(ru):	X11/âÉÂÌÉÏÔÅËÉ
-Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
 
 %description -n XawM
 XawM is modified version of X athena widgets in 3d (Xaw3d). It adds 3d

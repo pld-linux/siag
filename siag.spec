@@ -20,7 +20,7 @@ BuildRequires:	ncurses-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
+%define		_prefix		/usr
 
 %description
 Siag Office is a free office package for Unix, including word

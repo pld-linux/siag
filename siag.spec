@@ -50,7 +50,7 @@ plików Xfiler oraz przegl±darki Gvu.
 Summary:	Scheme In A Grid - Siag Office spreadsheet
 Summary(pl):	Scheme In A Grid - arkusz kalkulacyjny Siag Office
 Group:		X11/Applications
-Requires:       %{name} = %{version}
+Requires:	%{name} = %{version}
 
 %description siag
 Siag is a spreadsheet based on X and Scheme. It has many, many
@@ -77,7 +77,7 @@ Microsoft Excel.
 Summary:	Pathetic Writer - Siag Office word processor
 Summary(pl):	Pathetic Writer - procesor tekstów Siag Office
 Group:		X11/Applications
-Requires:       %{name} = %{version}
+Requires:	%{name} = %{version}
 
 %description pw
 Pathetic Writer is an X-based word processor for Unix. It is a part of
@@ -98,7 +98,7 @@ RTF. Niektóre z nich wymagaj± zewnêtrznego konwertera o nazwie WV.
 Summary:	Egon Animator - Siag Office animation software
 Summary(pl):	Egon Animator - oprogramowanie do animacji Siag Office
 Group:		X11/Applications/Graphics
-Requires:       %{name} = %{version}
+Requires:	%{name} = %{version}
 
 %description egon
 Egon Animator is an X-based animation development tool for Unix. The
@@ -130,7 +130,7 @@ ochrony pamiêci.
 Summary:	Siag Office simple but powerful text editor
 Summary(pl):	Prosty lecz wydajny edytor tekstów Siag Office
 Group:		X11/Applications/Editors
-Requires:       %{name} = %{version}
+Requires:	%{name} = %{version}
 
 %description xedplus
 Simple text editor for editing config files or source code. It
@@ -146,7 +146,7 @@ wywo³aæ seda. Xedplus jest czê¶ci± pakietu biurowego Siag Office.
 Summary:	Siag Office file manager
 Summary(pl):	Zarz±dca plików Siag Office
 Group:		X11/Applications
-Requires:       %{name} = %{version}
+Requires:	%{name} = %{version}
 
 %description xfiler
 Simple and easy to use file manager. It contains basic commands to
@@ -185,9 +185,9 @@ trochê wiêcej ni¿ opisanych tutaj):
 - The Image Plugin - wy¶wietla najbardziej popularne formaty plików
   je¶li jest zainstalowany zestaw konwerterów NETPBM. W przeciwnym
   wypadku bêdzie wy¶wietla³ tylko grafikê w formacie XPM.
-- The Dummy Plugin - dzia³a jako swoisty interfejs pomiêdzy Siagiem
-  a inna aplikacj±. Komunikuje siê protoko³em wtyczek ze Siag i robi,
-  co potrafi, aby zarz±dzaæ zewnêtrzn± aplikacj±.
+- The Dummy Plugin - dzia³a jako swoisty interfejs pomiêdzy Siagiem a
+  inna aplikacj±. Komunikuje siê protoko³em wtyczek ze Siag i robi, co
+  potrafi, aby zarz±dzaæ zewnêtrzn± aplikacj±.
 - The Hello Plugin - stworzony dla celów demonstracyjnych: wy¶wietla
   komunikat "Hello, World" w swoim oknie. Jest doskona³ym przyk³adem,
   który mo¿e pos³u¿yæ do stworzenia w pe³ni dzia³aj±cej wtyczki.
@@ -196,7 +196,7 @@ trochê wiêcej ni¿ opisanych tutaj):
 Summary:	Siag Office graphics previewer
 Summary(pl):	Przegl±darka graficzna Siag Office
 Group:		X11/Applications
-Requires:       %{name} = %{version}
+Requires:	%{name} = %{version}
 
 %description gvu
 Gvu allows you to easily view Postscript (*.ps) and Encapsulated

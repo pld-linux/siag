@@ -1,7 +1,7 @@
 Summary:	Siag Office
 Name:		siag
 Version:	3.4.10
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.gz
@@ -43,6 +43,7 @@ plików Xfiler oraz przegl±darki Gvu.
 Summary:	Scheme In A Grid - Siag Office spreadsheet
 Summary(pl):	Scheme In A Grid - arkusz kalkulacyjny Siag Office
 Group:		X11/Applications
+Requires:       %{name} = %{version}
 
 %description siag
 Siag is a spreadsheet based on X and Scheme. It has many, many
@@ -69,6 +70,7 @@ Microsoft Excel.
 Summary:	Pathetic Writer - Siag Office word processor
 Summary(pl):	Pathetic Writer - procesor tekstów Siag Office
 Group:		X11/Applications
+Requires:       %{name} = %{version}
 
 %description pw
 Pathetic Writer is an X-based word processor for Unix. It is a part of
@@ -89,6 +91,7 @@ RTF. Niektóre z nich w ymagaj± zewnêtrznego konwertera o nazwie WV.
 Summary:	Egon Animator - Siag Office animation software
 Summary(pl):	Egon Animator - oprogramowanie do animacji Siag Office
 Group:		X11/Applications/Graphics
+Requires:       %{name} = %{version}
 
 %description egon
 Egon Animator is an X-based animation development tool for Unix. The
@@ -120,6 +123,7 @@ pamiêci.
 Summary:	Siag Office simple but powerful text editor
 Summary(pl):	Prosty lecz wydajny edytor tekstów Siag Office
 Group:		X11/Applications/Editors
+Requires:       %{name} = %{version}
 
 %description xedplus
 Simple text editor for editing config files or source code. It
@@ -135,6 +139,7 @@ wywo³aæ seda. Xedplus jest czê¶ci± pakietu biurowego Siag Office.
 Summary:	Siag Office file manager
 Summary(pl):	Mened¿er plików Siag Office
 Group:		X11/Applications
+Requires:       %{name} = %{version}
 
 %description xfiler
 Simple and easy to use file manager. It contains basic commands to
@@ -183,6 +188,7 @@ trochê wiêcej ni¿ opisanych tutaj):
 Summary:	Siag Office graphics previewer
 Summary(pl):	Przegl±darka graficzna Siag Office
 Group:		X11/Applications
+Requires:       %{name} = %{version}
 
 %description gvu
 Gvu allows you to easily view Postscript (*.ps) and Encapsulated

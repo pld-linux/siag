@@ -2,8 +2,9 @@
 Name=Xfiler
 Name[pl]=Xfiler
 Comment=Siag Office file manager
-Comment[pl]=Menedøer plikÛw Siag Office
+Comment[pl]=Mened≈ºer plik√≥w Siag Office
 Exec=xfiler
 Icon=/usr/X11R6/share/siag/common/bitmaps/xfiler.xpm
 Terminal=0
 Type=Application
+# vi: encoding=utf-8

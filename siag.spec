@@ -23,7 +23,6 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	ncurses-devel
-BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -235,7 +234,7 @@ pod X window.
 #%patch -p1
 
 %build
-CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g} -I/usr/include/ncurses"
+CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 %configure
 %{__make} 
 

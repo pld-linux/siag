@@ -1,34 +1,18 @@
-Summary: Siag Office
-Name: siag
-Version: 3.1.6
-Release: 1
-Copyright: GPL
-Group: Applications
-Source: ftp://ftp.edu.stockholm.se/pub/siag/%{name}-%{version}.tar.gz
-Packager: Pablo Costa <pablo@shark.ib.usp.br>
-URL: http://www.edu.stockholm.se/siag/
+Summary:	Siag Office
+Name:		siag
+Version:	3.1.6
+Release:	1
+Copyright:	GPL
+Group:		X11/Applications
+Source:		ftp://ftp.edu.stockholm.se/pub/siag/%{name}-%{version}.tar.gz
+URL:		http://www.edu.stockholm.se/siag/
 #Requires: guile tcl Xaw3d
-BuildRoot: /tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 Siag Office is a free office package for Unix, including word processor,
 spreadsheet and presentation graphics. It is a bundling of the spreadsheet
 SIAG, the word processor WP and the Animation program Egon. 
-
-%changelog
-* Sat Feb 20 1999 Pablo Costa <pablo@shark.ib.usp.br>
-- upgrade to the version 3.1.6
-- Compile with quile, tcl and Xaw3d
-
-* Sat Jan  2 1999 Kjetil Wiekhorst Jørgensen <jorgens+rpm@pvv.org>
-
-- upgraded to version 3.1.3
-
-* Wed Dec  2 1998 Kjetil Wiekhorst Jørgensen <jorgens+rpm@pvv.org>
-- upgraded to version 3.1.0
-
-* Sat Jul 4 1998 Jason Spangler <jasons@usemail.com>
-  - initial creation of RPM
 
 %prep
 %setup 
@@ -210,3 +194,18 @@ make install prefix=$RPM_BUILD_ROOT/usr
 /usr/libexec/siag/plugins/dummy
 /usr/libexec/siag/plugins/image
 /usr/libexec/siag/plugins/hello
+
+%changelog
+* Sat Feb 20 1999 Pablo Costa <pablo@shark.ib.usp.br>
+- upgrade to the version 3.1.6
+- Compile with quile, tcl and Xaw3d
+
+* Sat Jan  2 1999 Kjetil Wiekhorst Jørgensen <jorgens+rpm@pvv.org>
+
+- upgraded to version 3.1.3
+
+* Wed Dec  2 1998 Kjetil Wiekhorst Jørgensen <jorgens+rpm@pvv.org>
+- upgraded to version 3.1.0
+
+* Sat Jul 4 1998 Jason Spangler <jasons@usemail.com>
+  - initial creation of RPM

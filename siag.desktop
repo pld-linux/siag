@@ -4,6 +4,6 @@ Name[pl]=Scheme In A Grid
 Comment=Siag Office spreadsheet
 Comment[pl]=Arkusz kalkulacyjny Siag Office
 Exec=siag
-Icon=siag.xpm
+Icon=/usr/X11R6/share/siag/common/bitmaps/siag.xpm
 Terminal=0
 Type=Application

@@ -4,6 +4,6 @@ Name[pl]=Pathetic Writer
 Comment=Siag Office word processor
 Comment[pl]=Procesor tekstów Siag Office
 Exec=pw
-Icon=pw.xpm
+Icon=/usr/X11R6/share/siag/common/bitmaps/pw.xpm
 Terminal=0
 Type=Application

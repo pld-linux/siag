@@ -4,6 +4,6 @@ Name[pl]=Xedplus
 Comment=Siag Office text editor
 Comment[pl]=Edytor tekstów Siag Office
 Exec=xedplus
-Icon=xedplus.xpm
+Icon=/usr/X11R6/share/siag/common/bitmaps/xedplus.xpm
 Terminal=0
 Type=Application

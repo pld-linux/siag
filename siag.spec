@@ -20,6 +20,7 @@ Source10:	egon.png
 Source11:	pw.png
 Source12:	xedplus.png
 URL:		http://siag.nu/
+BuildRequires:	Mowitz-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	bzip2-devel
 BuildRequires:	freetype1-devel
@@ -29,10 +30,9 @@ BuildRequires:	libtiff-devel
 BuildRequires:	ncurses-devel
 #BuildRequires:	python-devel
 #BuildRequires:	tcl-devel
-BuildRequires:	Mowitz-devel
-BuildRequires:	neXtaw-devel	
+BuildRequires:	neXtaw-devel
+Obsoletes:	XawM
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 Siag Office is a tightly integrated, fast and free office package. It
@@ -52,7 +52,7 @@ plików Xfiler oraz przegl±darki Gvu.
 Summary:	Scheme In A Grid - Siag Office spreadsheet
 Summary(pl):	Scheme In A Grid - arkusz kalkulacyjny Siag Office
 Group:		X11/Applications
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description siag
 Siag is a spreadsheet based on X and Scheme. It has many, many
@@ -79,7 +79,7 @@ Microsoft Excel.
 Summary:	Pathetic Writer - Siag Office word processor
 Summary(pl):	Pathetic Writer - procesor tekstów Siag Office
 Group:		X11/Applications
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description pw
 Pathetic Writer is an X-based word processor for Unix. It is a part of
@@ -100,7 +100,7 @@ RTF. Niektóre z nich wymagaj± zewnêtrznego konwertera o nazwie WV.
 Summary:	Egon Animator - Siag Office animation software
 Summary(pl):	Egon Animator - oprogramowanie do animacji Siag Office
 Group:		X11/Applications/Graphics
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description egon
 Egon Animator is an X-based animation development tool for Unix. The
@@ -132,7 +132,7 @@ ochrony pamiêci.
 Summary:	Siag Office simple but powerful text editor
 Summary(pl):	Prosty lecz wydajny edytor tekstów Siag Office
 Group:		X11/Applications/Editors
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description xedplus
 Simple text editor for editing config files or source code. It
@@ -148,7 +148,7 @@ wywo³aæ seda. Xedplus jest czê¶ci± pakietu biurowego Siag Office.
 Summary:	Siag Office file manager
 Summary(pl):	Zarz±dca plików Siag Office
 Group:		X11/Applications
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description xfiler
 Simple and easy to use file manager. It contains basic commands to
@@ -164,6 +164,7 @@ Xfiler jest czê¶ci± pakietu biurowego Siag Office.
 Summary:	Plugins to use with Siag Office package
 Summary(pl):	Wtyczki do u¿ywania z pakietem Siag Office
 Group:		X11/Applications
+Requires:	%{name} = %{version}-%{release}
 
 %description plugins
 It contains some plugins for Siag Office package (there are some more
@@ -198,7 +199,7 @@ trochê wiêcej ni¿ opisanych tutaj):
 Summary:	Siag Office graphics previewer
 Summary(pl):	Przegl±darka graficzna Siag Office
 Group:		X11/Applications
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description gvu
 Gvu allows you to easily view Postscript (*.ps) and Encapsulated
@@ -217,7 +218,8 @@ Siag Office.
 %build
 CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 %configure2_13
-%{__make} CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
+%{__make} \
+	CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -225,7 +227,8 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir} \
 	$RPM_BUILD_ROOT%{_desktopdir} \
 	$RPM_BUILD_ROOT%{_datadir}/siag/examples/{pw,siag,egon}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} \
 	$RPM_BUILD_ROOT%{_desktopdir}
@@ -248,12 +251,15 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/mgptotxt
 %attr(755,root,root) %{_bindir}/siaghelp
 %attr(755,root,root) %{_bindir}/siagrun
+%dir %{_datadir}/siag
+%dir %{_datadir}/siag/common
 %attr(755,root,root) %{_datadir}/siag/common/any2xpm
 %{_datadir}/siag/common/common.scm
 #here should be something with lang or not?
 %{_datadir}/siag/common/dictionary.*
 %{_datadir}/siag/common/position.scm
 %{_datadir}/siag/common/tools.scm
+%dir %{_datadir}/siag/common/bitmaps
 %{_datadir}/siag/common/bitmaps/addressbook.xpm
 %{_datadir}/siag/common/bitmaps/SO3.xpm
 %{_datadir}/siag/common/bitmaps/back.xpm
@@ -334,17 +340,20 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/kde2
 %{_datadir}/siag/common/bitmaps/ms
 %{_datadir}/siag/common/bitmaps/gnome
+%dir %{_datadir}/siag/common/themes
 %{_datadir}/siag/common/themes/theme.athena
 %{_datadir}/siag/common/themes/theme.classic
 %{_datadir}/siag/common/themes/theme.gnome
 %{_datadir}/siag/common/themes/theme.kde
 %{_datadir}/siag/common/themes/theme.kde2
 %{_datadir}/siag/common/themes/theme.ms
+%dir %{_datadir}/siag/examples
+%dir %{_datadir}/siag/siod
 %{_datadir}/siag/siod/siod.scm
+%dir %{_datadir}/siag/xcommon
 %{_datadir}/siag/xcommon/StringDefs.scm
 %{_datadir}/siag/xcommon/form.scm
 %{_mandir}/man1/siod.1*
-
 
 %files siag
 %defattr(644,root,root,755)
@@ -353,6 +362,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc siag/docs/*.gif
 %attr(755,root,root) %{_bindir}/siag
 %attr(755,root,root) %{_bindir}/tsiag
+%dir %{_datadir}/siag/siag
 %{_datadir}/siag/siag/123.scm
 %{_datadir}/siag/siag/data.scm
 %{_datadir}/siag/siag/external.load
@@ -375,7 +385,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/siag/functions.scm
 %{_datadir}/siag/siag/trans.scm
 %{_datadir}/siag/common/bitmaps/siag.xpm
-%{_datadir}/siag/examples/siag/*
+%{_datadir}/siag/examples/siag
 %{_mandir}/man1/siag.1*
 %{_desktopdir}/siag.desktop
 %{_pixmapsdir}/siag.png
@@ -385,6 +395,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc pw/docs/*.html
 %doc pw/docs/*.gif
 %attr(755,root,root) %{_bindir}/pw
+%dir %{_datadir}/siag/pw
 %{_datadir}/siag/pw/external.load
 %{_datadir}/siag/pw/external.save
 %{_datadir}/siag/pw/menu.scm
@@ -393,7 +404,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/pw.xpm
 %{_datadir}/siag/common/bitmaps/strike.xpm
 %{_datadir}/siag/common/bitmaps/hfull.xpm
-%{_datadir}/siag/examples/pw/*
+%{_datadir}/siag/examples/pw
 %{_mandir}/man1/pw.1*
 %{_desktopdir}/pw.desktop
 %{_pixmapsdir}/pw.png
@@ -403,13 +414,14 @@ rm -rf $RPM_BUILD_ROOT
 %doc egon/docs/*.html
 %doc egon/docs/*.gif
 %attr(755,root,root) %{_bindir}/egon
+%dir %{_datadir}/siag/egon
 %{_datadir}/siag/egon/animator.scm
 %{_datadir}/siag/egon/egon.scm
 %{_datadir}/siag/egon/external.load
 %{_datadir}/siag/egon/external.save
 %{_datadir}/siag/egon/menu.scm
 %{_datadir}/siag/common/bitmaps/egon.xpm
-%{_datadir}/siag/examples/egon/*
+%{_datadir}/siag/examples/egon
 %{_mandir}/man1/egon.1*
 %{_desktopdir}/egon.desktop
 %{_pixmapsdir}/egon.png
@@ -428,6 +440,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc xfiler/{README,xfiler.html}
 %attr(755,root,root) %{_bindir}/xfiler
 %attr(755,root,root) %{_bindir}/runcmd
+%dir %{_datadir}/siag/xfiler
 %{_datadir}/siag/xfiler/FilesMagic
 %{_datadir}/siag/xfiler/Filesrc
 %attr(755,root,root) %{_datadir}/siag/xfiler/makeicons
@@ -441,6 +454,8 @@ rm -rf $RPM_BUILD_ROOT
 %files plugins
 %defattr(644,root,root,755)
 %doc plugins/README
+%dir %{_libdir}/siag
+%dir %{_libdir}/siag/plugins
 %attr(755,root,root) %{_libdir}/siag/plugins/clipart
 %attr(755,root,root) %{_libdir}/siag/plugins/dummy
 %attr(755,root,root) %{_libdir}/siag/plugins/form
@@ -448,6 +463,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/siag/plugins/image
 %attr(755,root,root) %{_libdir}/siag/plugins/plot
 %attr(755,root,root) %{_libdir}/siag/plugins/text
+%dir %{_datadir}/siag/plugins
 %{_datadir}/siag/plugins/dummy.scm
 %{_datadir}/siag/plugins/plugin.scm
 %{_mandir}/man1/dummy_plugin.1*

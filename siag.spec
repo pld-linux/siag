@@ -22,104 +22,114 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix		/usr
 
 %description
-Siag Office is a tightly integrated, free office package. It consists of
-the spreadsheet Siag, the word processor PW, the animation program Egon,
-the text editor XedPlus, the file manager Xfiler and the previewer Gvu.
+Siag Office is a tightly integrated, free office package. It consists
+of the spreadsheet Siag, the word processor PW, the animation program
+Egon, the text editor XedPlus, the file manager Xfiler and the
+previewer Gvu.
 
-Install this package if you want to use any of Siag Office programs. 
+Install this package if you want to use any of Siag Office programs.
 
 %package siag
-Summary: Scheme In A Grid - spreadsheet for Siag Office
-Group: X11/Applications
+Summary:	Scheme In A Grid - spreadsheet for Siag Office
+Group:		X11/Applications
+Group(pl):	X11/Aplikacje
 
 %description siag
-Siag is a spreadsheet based on X and Scheme. It has many, many features.
-It contains even webserver! It is a part of free Siag Office package.
+Siag is a spreadsheet based on X and Scheme. It has many, many
+features. It contains even webserver! It is a part of free Siag Office
+package.
 
 Supported file formats: Siag, Comma Separated Values, Plain Text,
-Lotus 1-2-3, Postscript, HTML Tables, Scheme Code, Troff Tables, LaTeX Tables.
-Additional formats can be supported by using external converters, such as
-xls2cvs for Microsoft Excel.
+Lotus 1-2-3, Postscript, HTML Tables, Scheme Code, Troff Tables, LaTeX
+Tables. Additional formats can be supported by using external
+converters, such as xls2cvs for Microsoft Excel.
 
 %package pw
-Summary: Pathetic Writer - word processor for Siag Office
-Group: X11/Applications
+Summary:	Pathetic Writer - word processor for Siag Office
+Group:		X11/Applications
+Group(pl):	X11/Aplikacje
 
 %description pw
-Pathetic Writer is an X-based word processor for Unix. It is a part of free
-Siag Office package.
+Pathetic Writer is an X-based word processor for Unix. It is a part of
+free Siag Office package.
 
-Supported file formats: Pathetic Writer, Plain Text, Postscript, Hypertext
-Markup Language, Rich Text Format. Some of them require using external
-converter called WV.
+Supported file formats: Pathetic Writer, Plain Text, Postscript,
+Hypertext Markup Language, Rich Text Format. Some of them require
+using external converter called WV.
 
 %package egon
-Summary: Egon Animator - animation software for Siag Office
-Group: X11/Applications
+Summary:	Egon Animator - animation software for Siag Office
+Group:		X11/Applications
+Group(pl):	X11/Aplikacje
 
 %description egon
-Egon Animator is an X-based animation development tool for Unix. The idea
-is that "objects" (rectangles, lines, pixmaps and so on) are added to a "stage"
-where they are then made to perform by telling them where they should be
-and when. It is a part of free Siag Office package.
+Egon Animator is an X-based animation development tool for Unix. The
+idea is that "objects" (rectangles, lines, pixmaps and so on) are
+added to a "stage" where they are then made to perform by telling them
+where they should be and when. It is a part of free Siag Office
+package.
 
-Supported file formats: Egon Animator, C source, Animated GIF, Postscript,
-Text, HTML, Magic Point, MS Powerpoint (pptHtml required).
+Supported file formats: Egon Animator, C source, Animated GIF,
+Postscript, Text, HTML, Magic Point, MS Powerpoint (pptHtml required).
 
 %package xedplus
-Summary: Simple but powerful text editor for Siag Office package
-Group: X11/Applications
+Summary:	Simple but powerful text editor for Siag Office package
+Group:		X11/Applications
+Group(pl):	X11/Aplikacje
 
 %description xedplus
-Simple text editor for editing config files or source code. It contains
-everything you need including even commands to call sed. It is a part of free
-Siag Office package.
+Simple text editor for editing config files or source code. It
+contains everything you need including even commands to call sed. It
+is a part of free Siag Office package.
 
 %package xfiler
-Summary: File manager for Siag Office package
-Group: X11/Applications
+Summary:	File manager for Siag Office package
+Group:		X11/Applications
+Group(pl):	X11/Aplikacje
 
 %description xfiler
-Simple and easy to use file manager. It contains basic commands to manage
-your filesystem. Suits almost all needs of plain user. It is a part of free
-Siag Office package.
+Simple and easy to use file manager. It contains basic commands to
+manage your filesystem. Suits almost all needs of plain user. It is a
+part of free Siag Office package.
 
 %package plugins
-Summary: Plugins to use with Siag Office package
-Group: X11/Applications
+Summary:	Plugins to use with Siag Office package
+Group:		X11/Applications
+Group(pl):	X11/Aplikacje
 
 %description plugins
-It contains some plugins for Siag Office package (there are some more not
-mentioned here):
+It contains some plugins for Siag Office package (there are some more
+not mentioned here):
 
-* The Image Plugin
-It displays most common image formats if the NETPBM collection of  graphics  converters  is  installed.  Otherwise it will be able to display XPM images.
-* The Dummy Plugin
-The dummy application works as a "shim" between Siag and another application.
-It speaks the plugin protocol with Siag and does its best to manage the
-external application.
-* The Hello Plugin
-This one is for demonstrational purposes only: it displays the message
-"Hello, World" in its window. It is suitable as an example of a simple plugin,
-in that it contains all the necessary code to make a plugin of a normal
-X program.
+- The Image Plugin It displays most common image formats if the NETPBM
+  collection of graphics converters is installed. Otherwise it will be
+  able to display XPM images.
+- The Dummy Plugin The dummy application works as a "shim" between
+  Siag and another application. It speaks the plugin protocol with Siag
+  and does its best to manage the external application.
+- The Hello Plugin This one is for demonstrational purposes only: it
+  displays the message "Hello, World" in its window. It is suitable as
+  an example of a simple plugin, in that it contains all the necessary
+  code to make a plugin of a normal X program.
 
 %package gvu
-Summary: Graphics previewer for Siag Office package
-Group: X11/Applications
+Summary:	Graphics previewer for Siag Office package
+Group:		X11/Applications
+Group(pl):	X11/Aplikacje
 
 %description gvu
-Gvu allows you to easily view Postscript (*.ps) and Encapsulated Postsript
-(*.eps) files. It uses Aladdin Ghostscript software to process files.
-It is a part of free Siag Office package.
+Gvu allows you to easily view Postscript (*.ps) and Encapsulated
+Postsript (*.eps) files. It uses Aladdin Ghostscript software to
+process files. It is a part of free Siag Office package.
 
 %package -n XawM
-Summary: Modified version of X athena widgets in 3d (Xaw3d)
-Group: X11/Applications
+Summary:	Modified version of X athena widgets in 3d (Xaw3d)
+Group:		X11/Applications
+Group(pl):	X11/Aplikacje
 
 %description -n XawM
-XawM is modified version of X athena widgets in 3d (Xaw3d). It adds 3d look
-to applications running under Xwindow.
+XawM is modified version of X athena widgets in 3d (Xaw3d). It adds 3d
+look to applications running under Xwindow.
 
 %prep
 %setup -q 
@@ -140,7 +150,7 @@ gzip -9nf {common,siag,pw,egon,siod}/docs/* xed/{README,TODO,xedplus.html} \
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -n XawM -p /sbin/ldconfig
+%post   -n XawM -p /sbin/ldconfig
 %postun -n XawM -p /sbin/ldconfig
 
 %files
@@ -178,9 +188,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc common/docs/siaghelp.html.gz
 %doc xcommon/docs/TODO.gz
 %doc siod/docs/siod.html.gz
-%{_mandir}/man1/siod.1.gz
+%{_mandir}/man1/siod.1*
 
 %files siag
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/siag
 %attr(755,root,root) %{_bindir}/tsiag
 %{_datadir}/siag/siag/123.scm
@@ -220,9 +231,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc siag/docs/siag.html.gz
 %doc siag/docs/strings.html.gz
 #%doc siag/examples/*
-%{_mandir}/man1/siag.1.gz
+%{_mandir}/man1/siag.1*
 
 %files pw
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/pw
 %{_datadir}/siag/pw/external.load
 %{_datadir}/siag/pw/external.save
@@ -246,9 +258,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc pw/docs/strings.html.gz
 %doc pw/docs/toolbar.html.gz
 #%doc pw/examples/*
-%{_mandir}/man1/pw.1.gz
+%{_mandir}/man1/pw.1*
 
 %files egon
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/egon
 %{_datadir}/siag/egon/animator.scm
 %{_datadir}/siag/egon/egon.scm
@@ -271,16 +284,18 @@ rm -rf $RPM_BUILD_ROOT
 %doc egon/docs/strings.html.gz
 %doc egon/docs/toolbar.html.gz
 #%doc egon/examples/*
-%{_mandir}/man1/egon.1.gz
+%{_mandir}/man1/egon.1*
 
 %files xedplus
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/xedplus
 %doc xed/README.gz
 %doc xed/TODO.gz
 %doc xed/xedplus.html.gz
-%{_mandir}/man1/xedplus.1.gz
+%{_mandir}/man1/xedplus.1*
 
 %files xfiler
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/xfiler
 %attr(755,root,root) %{_bindir}/runcmd
 %{_datadir}/siag/xfiler/FilesMagic
@@ -289,10 +304,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc xfiler/README.gz
 %doc xfiler/TODO.gz
 %doc xfiler/xfiler.html.gz
-%{_mandir}/man1/xfiler.1.gz
+%{_mandir}/man1/xfiler.1*
 #BITMAPS MISSING!!!
 
 %files plugins
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}exec/siag/plugins/clipart
 %attr(755,root,root) %{_libdir}exec/siag/plugins/dummy
 %attr(755,root,root) %{_libdir}exec/siag/plugins/form
@@ -304,16 +320,18 @@ rm -rf $RPM_BUILD_ROOT
 %doc plugins/TODO.gz
 %{_datadir}/siag/plugins/dummy.scm
 %{_datadir}/siag/plugins/plugin.scm
-%{_mandir}/man1/dummy_plugin.1.gz
+%{_mandir}/man1/dummy_plugin.1*
 
 %files gvu
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gvu
 %doc gvu/README.gz
 %doc gvu/TODO.gz
-%{_mandir}/man1/gvu.1.gz
+%{_mandir}/man1/gvu.1*
 
 %files -n XawM
-%{_libdir}/libXawM.so.0.0.0
+%defattr(644,root,root,755)
+%{_libdir}/libXawM.so.*.*
 %doc XawM/README.gz
 %doc XawM/README.Linux.gz
 %doc XawM/README.XAW3D.gz

@@ -26,17 +26,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix		/usr/X11R6
 
 %description
-Siag Office is a tightly integrated, fast and free office package. It consists
-of the spreadsheet Siag, the word processor PW, the animation program
-Egon, the text editor XedPlus, the file manager Xfiler and the
+Siag Office is a tightly integrated, fast and free office package. It
+consists of the spreadsheet Siag, the word processor PW, the animation
+program Egon, the text editor XedPlus, the file manager Xfiler and the
 previewer Gvu.
 
 Install this package if you want to use any of Siag Office programs.
 
 %description -l pl
-Siag Office jest ¶ci¶le zintegrowanym, szybkim darmowym pakietem biurowym.
-Sk³ada siê z arkusza kalkulacyjnego Siag, procesora tekstów PW,
-programu do animacji egon, edytora tekstowego XedPlus, mened¿era
+Siag Office jest ¶ci¶le zintegrowanym, szybkim darmowym pakietem
+biurowym. Sk³ada siê z arkusza kalkulacyjnego Siag, procesora tekstów
+PW, programu do animacji egon, edytora tekstowego XedPlus, mened¿era
 plików Xfiler oraz przegl±darki Gvu.
 
 %package siag
@@ -54,7 +54,7 @@ Lotus 1-2-3, Postscript, HTML Tables, Scheme Code, Troff Tables, LaTeX
 Tables. Additional formats can be supported by using external
 converters, such as xls2csv for Microsoft Excel.
 
-%description -l pl siag
+%description siag -l pl
 Siag jest arkuszem kalkulacyjnym bazuj±cym na systemie Xwindow oraz
 jêzyku Scheme. Posiada wiele, bardzo wiele funkcji. Jest wyposa¿ony
 nawet w serwer WWW! Siag jest czê¶ci± pakietu biurowego Siag Office.
@@ -78,7 +78,7 @@ Supported file formats: Pathetic Writer, Plain Text, Postscript,
 Hypertext Markup Language, Rich Text Format. Some of them require
 using external converter called WV.
 
-%description -l pl pw
+%description pw -l pl
 Pathetic Writer jest procesorem tekstów bazowanym na systemie X
 window. Jest on czê¶ci± pakietu biurowego Siag Office.
 
@@ -102,7 +102,7 @@ Postscript, Text, HTML, Magic Point, MS Powerpoint (pptHtml required).
 
 Sorry but it is currently useless - it segfaults.
 
-%description -l pl egon
+%description egon -l pl
 Egon Animator jest narzêdziem do tworzenia animacji bazowanym na
 systemie X window. Zasada dzia³ania polega na tym, ¿e "obiekty"
 (prostok±ty, linie, obrazki itd.) s± dodawane do "sceny", gdzie
@@ -126,7 +126,7 @@ Simple text editor for editing config files or source code. It
 contains everything you need including even commands to call sed.
 Xedplus is a part of free Siag Office package.
 
-%description -l pl xedplus
+%description xedplus -l pl
 Prosty edytor tekstów do edycji plików konfiguracyjnych czy kodów
 ¼ród³owych. Posiada wszystko, czego potrzebujesz - nawet komendy, aby
 wywo³aæ seda. Xedplus jest czê¶ci± pakietu biurowego Siag Office.
@@ -141,7 +141,7 @@ Simple and easy to use file manager. It contains basic commands to
 manage your filesystem. Suits almost all needs of plain user. Xfiler
 is a part of free Siag Office package.
 
-%description -l pl xfiler
+%description xfiler -l pl
 Prosty i ³atwy w u¿yciu mened¿er plików. Posiada podstawowe komendy do
 zarz±dzania Twoim systemem plików. Wype³nia potrzeby zwyk³ego
 u¿ytkownika. Xfiler jest czê¶ci± pakietu biurowego Siag Office.
@@ -165,7 +165,7 @@ not mentioned here):
   an example of a simple plugin, in that it contains all the necessary
   code to make a plugin of a normal X program.
 
-%description -l pl plugins
+%description plugins -l pl
 Zawiera kilka pluginów dla pakietu biurowego Siag Office (jest ich
 trochê wiêcej ni¿ opisanych tutaj):
 
@@ -189,7 +189,7 @@ Gvu allows you to easily view Postscript (*.ps) and Encapsulated
 Postsript (*.eps) files. It uses Aladdin Ghostscript software to
 process files. Gvu is a part of free Siag Office package.
 
-%description -l pl gvu
+%description gvu -l pl
 Gvu umo¿liwia ³atwe przegl±danie plików w formacie Postscript (*.ps)
 oraz Encapsulated Postscript (*.eps). Wykorzystuje w tym celu
 oprogramowanie Alladin Ghostscript. Gvu jest czê¶ci± pakietu biurowego
@@ -204,13 +204,13 @@ Group:		X11/Libraries
 XawM is modified version of X athena widgets in 3d (Xaw3d). It adds 3d
 look to applications running under Xwindow.
 
-%description -l pl -n XawM
+%description -n XawM -l pl
 XawM jest zmodyfikowan± wersj± trójowymiarowych widgetów atheny
 (Xaw3d). Dodaje "trójwymiarowo¶æ" interfejsom aplikacji dzia³aj±cych
 pod X window.
 
 %prep
-%setup -q 
+%setup -q
 #%patch -p1
 
 %build

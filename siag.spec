@@ -7,6 +7,7 @@ Group:		X11/Applications
 Group(pl):	X11/Aplikacje
 Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.bz2
 URL:		http://siag.nu/
+Patch0:		siag-ref_expander-bug.patch
 #BuildRequires:	tcl-devel
 #BuildRequires:	python-devel
 BuildRequires:	XFree86-devel
@@ -19,7 +20,7 @@ BuildRequires:	ncurses-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr
+%define		_prefix		/usr/X11R6
 
 %description
 Siag Office is a tightly integrated, free office package. It consists
@@ -133,6 +134,7 @@ look to applications running under Xwindow.
 
 %prep
 %setup -q 
+%patch -p1
 
 %build
 %configure

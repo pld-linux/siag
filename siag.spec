@@ -71,7 +71,9 @@ Summary: Simple but powerful text editor for Siag Office package
 Group: X11/Applications
 
 %description xedplus
-
+Simple text editor for editing config files or source code. It contains
+everything you need including even commands to call sed. It is a part of free
+Siag Office package.
 
 %package xfiler
 Summary: File manager for Siag Office package
@@ -107,18 +109,23 @@ Summary: Graphics previewer for Siag Office package
 Group: X11/Applications
 
 %description gvu
+Gvu allows you to easily view Postscript (*.ps) and Encapsulated Postsript
+(*.eps) files. It uses Aladdin Ghostscript software to process files.
+It is a part of free Siag Office package.
 
 %package -n XawM
 Summary: Modified version of X athena widgets in 3d (Xaw3d)
 Group: X11/Applications
 
 %description -n XawM
+XawM is modified version of X athena widgets in 3d (Xaw3d). It adds 3d look
+to applications running under Xwindow.
 
 %prep
 %setup -q 
 
 %build
-%configure --without-stocks
+%configure
 %{__make} 
 
 %install

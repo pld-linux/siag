@@ -32,13 +32,18 @@ Egon.
 %setup -q 
 
 %build
-CFLAGS="$RPM_OPT_FLAGS -I/usr/include/ncurses" ./configure --prefix=%{_prefix}
+LDFLAGS="-s"
+CFLAGS="$RPM_OPT_FLAGS -I/usr/include/ncurses"
+export LDFLAGS CFLAGS
+%configure
 %{__make} 
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install prefix=$RPM_BUILD_ROOT/%{_prefix} 
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -121,7 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc siag/docs/siag.html
 %doc siag/docs/strings.html
 #%doc siag/examples/*
-%{_prefix}/man/man1/siag.1
+%{_mandir}/man1/siag.1*
 
 #%files pw
 %attr(755,root,root) %{_bindir}/pw
@@ -147,7 +152,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc pw/docs/strings.html
 %doc pw/docs/toolbar.html
 #%doc pw/examples/*
-%{_prefix}/man/man1/pw.1
+%{_mandir}/man1/pw.1*
 
 #%files egon
 %attr(755,root,root) %{_bindir}/egon
@@ -172,14 +177,14 @@ rm -rf $RPM_BUILD_ROOT
 %doc egon/docs/strings.html
 %doc egon/docs/toolbar.html
 #%doc egon/examples/*
-%{_prefix}/man/man1/egon.1
+%{_mandir}/man1/egon.1*
 
 #%files xedplus maybe core?
 %attr(755,root,root) %{_bindir}/xedplus
 %doc xed/README
 %doc xed/TODO
 %doc xed/xedplus.html
-%{_prefix}/man/man1/xedplus.1
+%{_mandir}/man1/xedplus.1*
 
 #%files xfiler
 %attr(755,root,root) %{_bindir}/xfiler
@@ -190,7 +195,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc xfiler/README
 %doc xfiler/TODO
 %doc xfiler/xfiler.html
-%{_prefix}/man/man1/xfiler.1
+%{_mandir}/man1/xfiler.1*
 #BITMAPS MISSING!!!
 
 #%files plugins
@@ -205,18 +210,18 @@ rm -rf $RPM_BUILD_ROOT
 %doc plugins/TODO
 %{_datadir}/siag/plugins/dummy.scm
 %{_datadir}/siag/plugins/plugin.scm
-%{_prefix}/man/man1/dummy_plugin.1
+%{_mandir}/man1/dummy_plugin.1*
 
 #%files siod not sure if should be subpackaged
 %{_datadir}/siag/siod/siod.scm
 %doc siod/docs/siod.html
-%{_prefix}/man/man1/siod.1
+%{_mandir}/man1/siod.1*
 
 #%files gvu
 %attr(755,root,root) %{_bindir}/gvu
 %doc gvu/README
 %doc gvu/TODO
-%{_prefix}/man/man1/gvu.1
+%{_mandir}/man1/gvu.1*
 
 #%files -n XawM  ?
 #%{_libdir}/libXawM.so

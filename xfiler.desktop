@@ -7,5 +7,6 @@ Exec=xfiler
 Icon=xfiler.png
 Terminal=false
 Type=Application
+Categories=Utility;FileManager;
 Encoding=UTF-8
 # vi: encoding=utf-8

@@ -7,12 +7,23 @@ Group:		X11/Applications
 Group(pl):	X11/Aplikacje
 Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.bz2
 URL:		http://siag.nu/
-BuildRequires:	Xaw3d-devel
-BuildRequires:	tcl-devel
+#When builded with script languages enable those
+#BuildRequires:	tcl-devel
+#BuildRequires: python-devel
+#BuildRequires: XawM-devel - missing in PLD so built from siag
+#BuildRequires: xpm-devel
+BuildRequires:	XFree86-devel
+BuildRequires:	bzip2-devel
+BuildRequires:	freetype-devel
+BuildRequires:	libjpeg-devel
+BuildRequires:	libpng-devel
+BuildRequires:	libtiff-devel
+BuildRequires:	ncurses-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
+%define		_prefix		/usr
+#%define		_mandir		%{_prefix}/man
 
 %description
 Siag Office is a free office package for Unix, including word
@@ -24,13 +35,22 @@ Egon.
 %setup -q 
 
 %build
+#is it really needed?
 autoconf
-CFLAGS="$RPM_OPT_FLAGS -I/usr/include/db1" ./configure --prefix=/usr
+CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr
 make 
+#it is necessary if you are building siag and have installed older version
+cd XawM
+CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr
+cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
 make install prefix=$RPM_BUILD_ROOT/usr 
+install common/{rgb,fonts}.txt $RPM_BUILD_ROOT/usr/share/siag/common
+install common/bitmaps/{handlebg,save,lline,rline}.xpm $RPM_BUILD_ROOT/usr/share/siag/common/bitmaps
+cd XawM
+make install prefix=$RPM_BUILD_ROOT/usr
 
 %files
 %defattr(644,root,root,755)
@@ -48,7 +68,7 @@ make install prefix=$RPM_BUILD_ROOT/usr
 %doc egon/docs/COPYING
 %doc egon/docs/TODO
 %doc egon/docs/BUGS
-%doc egon/docs/CHANGES
+#%doc egon/docs/CHANGES
 %doc egon/docs/commands.html
 %doc egon/docs/concepts.html
 %doc egon/docs/egon.gif
@@ -65,7 +85,7 @@ make install prefix=$RPM_BUILD_ROOT/usr
 %doc pw/docs/COPYING
 %doc pw/docs/TODO
 %doc pw/docs/BUGS
-%doc pw/docs/CHANGES
+#%doc pw/docs/CHANGES
 %doc pw/docs/commands.html
 %doc pw/docs/concepts.html
 %doc pw/docs/fileformats.html
@@ -84,14 +104,14 @@ make install prefix=$RPM_BUILD_ROOT/usr
 %doc siag/docs/COPYING
 %doc siag/docs/TODO
 %doc siag/docs/BUGS
-%doc siag/docs/CHANGES
+#%doc siag/docs/CHANGES
 %doc siag/docs/c-expr.html
 %doc siag/docs/commands.html
 %doc siag/docs/concepts.html
 %doc siag/docs/fileformats.html
 %doc siag/docs/form.html
 %doc siag/docs/gnuplot.html
-%doc siag/docs/howto.html
+#%doc siag/docs/howto.html
 %doc siag/docs/intro.html
 %doc siag/docs/invocation.html
 %doc siag/docs/keys.html
@@ -104,13 +124,14 @@ make install prefix=$RPM_BUILD_ROOT/usr
 %doc siag/docs/toolbar.html
 %doc siod/docs/siod.html
 %doc xcommon/docs/TODO
-%doc xcommon/docs/CHANGES
+#%doc xcommon/docs/CHANGES
 %doc xcommon/docs/filesel.html
-/usr/man/man1/siod.1
-/usr/man/man1/siag.1
-/usr/man/man1/pw.1
-/usr/man/man1/egon.1
-/usr/man/man1/dummy_plugin.1
+#fix it later
+#/usr/man/man1/siod.1
+#/usr/man/man1/siag.1
+#/usr/man/man1/pw.1
+#/usr/man/man1/egon.1
+#/usr/man/man1/dummy_plugin.1
 %{_datadir}/siag/siod/siod.scm
 %{_datadir}/siag/common/bitmaps/blank.xpm
 %{_datadir}/siag/common/bitmaps/bold.xpm
@@ -118,9 +139,9 @@ make install prefix=$RPM_BUILD_ROOT/usr
 %{_datadir}/siag/common/bitmaps/copy.xpm
 %{_datadir}/siag/common/bitmaps/copyright.xpm
 %{_datadir}/siag/common/bitmaps/cut.xpm
-%{_datadir}/siag/common/bitmaps/egon_fg.xpm
+#%{_datadir}/siag/common/bitmaps/egon_fg.xpm
 %{_datadir}/siag/common/bitmaps/fld_open.xpm
-%{_datadir}/siag/common/bitmaps/floppy3.xpm
+#%{_datadir}/siag/common/bitmaps/floppy3.xpm
 %{_datadir}/siag/common/bitmaps/grid.xpm
 %{_datadir}/siag/common/bitmaps/hcenter.xpm
 %{_datadir}/siag/common/bitmaps/hleft.xpm
@@ -136,9 +157,9 @@ make install prefix=$RPM_BUILD_ROOT/usr
 %{_datadir}/siag/common/bitmaps/preview.xpm
 %{_datadir}/siag/common/bitmaps/previous.xpm
 %{_datadir}/siag/common/bitmaps/printer.xpm
-%{_datadir}/siag/common/bitmaps/pw_fg.xpm
+#%{_datadir}/siag/common/bitmaps/pw_fg.xpm
 %{_datadir}/siag/common/bitmaps/redo.xpm
-%{_datadir}/siag/common/bitmaps/siag_fg.xpm
+#%{_datadir}/siag/common/bitmaps/siag_fg.xpm
 %{_datadir}/siag/common/bitmaps/sigma.xpm
 %{_datadir}/siag/common/bitmaps/sortaz.xpm
 %{_datadir}/siag/common/bitmaps/sortza.xpm
@@ -155,16 +176,23 @@ make install prefix=$RPM_BUILD_ROOT/usr
 %{_datadir}/siag/common/bitmaps/quit.xpm
 %{_datadir}/siag/common/bitmaps/reload.xpm
 %{_datadir}/siag/common/bitmaps/search.xpm
-%{_datadir}/siag/common/bitmaps/ksiag.xpm
+%{_datadir}/siag/common/bitmaps/handlebg.xpm
+%{_datadir}/siag/common/bitmaps/save.xpm
+%{_datadir}/siag/common/bitmaps/lline.xpm
+%{_datadir}/siag/common/bitmaps/rline.xpm
+#%{_datadir}/siag/common/bitmaps/ksiag.xpm
 %{_datadir}/siag/common/any2xpm
-%{_datadir}/siag/common/colors.scm
-%{_datadir}/siag/common/fonts.scm
+#%{_datadir}/siag/common/colors.scm
+#%{_datadir}/siag/common/fonts.scm
 %{_datadir}/siag/common/tools.scm
+%{_datadir}/siag/common/common.scm
 %{_datadir}/siag/common/dictionary.sv
 %{_datadir}/siag/common/dictionary.es
 %{_datadir}/siag/common/dictionary.de
 %{_datadir}/siag/common/dictionary.fr
 %{_datadir}/siag/common/dictionary.no
+%{_datadir}/siag/common/rgb.txt
+%{_datadir}/siag/common/fonts.txt
 %{_datadir}/siag/xcommon/StringDefs.scm
 %{_datadir}/siag/xcommon/form.scm
 %{_datadir}/siag/siag/123.scm
@@ -199,6 +227,10 @@ make install prefix=$RPM_BUILD_ROOT/usr
 %attr(755,root,root) %{_bindir}/siag
 %attr(755,root,root) %{_bindir}/pw
 %attr(755,root,root) %{_bindir}/egon
-%{_libdir}exec/siag/plugins/dummy
-%{_libdir}exec/siag/plugins/image
-%{_libdir}exec/siag/plugins/hello
+#move it later somwhere ;>
+#%{_libdir}exec/siag/plugins/dummy
+#%{_libdir}exec/siag/plugins/image
+#%{_libdir}exec/siag/plugins/hello
+/usr/lib/libXawM.so
+/usr/lib/libXawM.so.0
+/usr/lib/libXawM.so.0.0.0

@@ -5,6 +5,6 @@ Comment=Siag Office animation software
 Comment[pl]=Program do animacji Siag Office
 Exec=egon
 Icon=egon.png
-Terminal=0
+Terminal=false
 Type=Application
 # vi: encoding=utf-8

@@ -5,6 +5,6 @@ Comment=Siag Office spreadsheet
 Comment[pl]=Arkusz kalkulacyjny Siag Office
 Exec=siag
 Icon=siag.png
-Terminal=0
+Terminal=false
 Type=Application
 # vi: encoding=utf-8

@@ -6,10 +6,12 @@ Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(pl):	X11/Aplikacje
-Source0:	ftp://siag.nu/pub/siag//pub/siag/%{name}-%{version}.tar.gz
-#Source0:	ftp://siag.nu/pub/siag//pub/siag/%{name}-%{version}.tar.bz2
+Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.gz
+#Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.bz2
 URL:		http://siag.nu/
 #BuildRequires:	guile tcl Xaw3d - devel
+BuildRequires:	Xawd3d-devel
+BuildRequires:	tcl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -26,8 +28,8 @@ Egon.
 
 %build
 autoconf
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr
-make
+CFLAGS="$RPM_OPT_FLAGS -I/usr/include/db1" ./configure --prefix=/usr
+make -DNDBM
 
 %install
 rm -rf $RPM_BUILD_ROOT

@@ -218,7 +218,12 @@ Summary(pl):	Zmodyfikowana wersja trÛjwymiarowych widgetÛw athena.
 Group:		X11/Libraries
 Group(de):	X11/Libraries
 Group(es):	X11/Bibliotecas
+Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
+Group(pt_BR):	X11/Bibliotecas
+Group(pt):	X11/Bibliotecas
+Group(ru):	X11/‚…¬Ã…œ‘≈À…
+Group(uk):	X11/‚¶¬Ã¶œ‘≈À…
 
 %description -n XawM
 XawM is modified version of X athena widgets in 3d (Xaw3d). It adds 3d

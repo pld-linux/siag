@@ -2,7 +2,7 @@ Summary:	Siag Office
 Summary(pl):	Pakiet biurowy Siag Office
 Name:		siag
 Version:	3.4.10
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.gz
@@ -12,6 +12,12 @@ Source3:	xfiler.desktop
 Source4:	egon.desktop
 Source5:	pw.desktop
 Source6:	xedplus.desktop
+Source7:	gvu.png
+Source8:	%{name}.png
+Source9:	xfiler.png
+Source10:	egon.png
+Source11:	pw.png
+Source12:	xedplus.png
 URL:		http://siag.nu/
 BuildRequires:	XFree86-devel
 BuildRequires:	bzip2-devel
@@ -230,7 +236,7 @@ CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Office/{Spreadsheets,Wordprocessors} \
 	$RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers \
-	$RPM_BUILD_ROOT%{_applnkdir}/{Editors,Utilities} \
+	$RPM_BUILD_ROOT{%{_applnkdir}/{Editors,Utilities},%{_pixmapsdir}} \
 	$RPM_BUILD_ROOT%{_datadir}/siag/examples/{pw,siag,egon}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
@@ -241,6 +247,8 @@ install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Utilities
 install %{SOURCE4} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 install %{SOURCE5} $RPM_BUILD_ROOT%{_applnkdir}/Office/Wordprocessors
 install %{SOURCE6} $RPM_BUILD_ROOT%{_applnkdir}/Editors
+install %{SOURCE7} %{SOURCE8} %{SOURCE9} %{SOURCE10} %{SOURCE11} %{SOURCE12} \
+	$RPM_BUILD_ROOT%{_pixmapsdir}
 
 install pw/examples/*.{doc,pw,html,rtf,txt,bmk} $RPM_BUILD_ROOT%{_datadir}/siag/examples/pw
 install siag/examples/*.{wk1,siag,csv} $RPM_BUILD_ROOT%{_datadir}/siag/examples/siag
@@ -428,6 +436,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/examples/siag/*
 %{_mandir}/man1/siag.1*
 %{_applnkdir}/Office/Spreadsheets/siag.desktop
+%{_pixmapsdir}/siag.png
 
 %files pw
 %defattr(644,root,root,755)
@@ -448,6 +457,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/examples/pw/*
 %{_mandir}/man1/pw.1*
 %{_applnkdir}/Office/Wordprocessors/pw.desktop
+%{_pixmapsdir}/pw.png
 
 %files egon
 %defattr(644,root,root,755)
@@ -463,6 +473,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/examples/egon/*
 %{_mandir}/man1/egon.1*
 %{_applnkdir}/Graphics/egon.desktop
+%{_pixmapsdir}/egon.png
 
 %files xedplus
 %defattr(644,root,root,755)
@@ -471,6 +482,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/xedplus.xpm
 %{_mandir}/man1/xedplus.1*
 %{_applnkdir}/Editors/xedplus.desktop
+%{_pixmapsdir}/xedplus.png
 
 %files xfiler
 %defattr(644,root,root,755)
@@ -483,6 +495,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/xfiler.xpm
 %{_mandir}/man1/xfiler.1*
 %{_applnkdir}/Utilities/xfiler.desktop
+%{_pixmapsdir}/xfiler.png
 #BITMAPS MISSING!!!
 
 %files plugins
@@ -506,6 +519,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/gvu.xpm
 %{_mandir}/man1/gvu.1*
 %{_applnkdir}/Graphics/Viewers/gvu.desktop
+%{_pixmapsdir}/gvu.png
 
 %files -n XawM
 %defattr(644,root,root,755)

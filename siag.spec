@@ -1,16 +1,13 @@
 Summary:	Siag Office
 Name:		siag
-Version:	3.1.6
-#Version:	3.3.7
+Version:	3.3.7
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(pl):	X11/Aplikacje
-Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.gz
-#Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.bz2
+Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.bz2
 URL:		http://siag.nu/
-#BuildRequires:	guile tcl Xaw3d - devel
-BuildRequires:	Xawd3d-devel
+BuildRequires:	Xaw3d-devel
 BuildRequires:	tcl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

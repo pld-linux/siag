@@ -1,21 +1,28 @@
 Summary:	Siag Office
 Name:		siag
 Version:	3.1.6
+#Version:	3.3.7
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		X11/Applications
-Source:		ftp://ftp.edu.stockholm.se/pub/siag/%{name}-%{version}.tar.gz
-URL:		http://www.edu.stockholm.se/siag/
-#Requires: guile tcl Xaw3d
-BuildRoot:	/tmp/%{name}-%{version}-root
+Group(pl):	X11/Aplikacje
+Source0:	ftp://siag.nu/pub/siag//pub/siag/%{name}-%{version}.tar.gz
+#Source0:	ftp://siag.nu/pub/siag//pub/siag/%{name}-%{version}.tar.bz2
+URL:		http://siag.nu/
+#BuildRequires:	guile tcl Xaw3d - devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
-Siag Office is a free office package for Unix, including word processor,
-spreadsheet and presentation graphics. It is a bundling of the spreadsheet
-SIAG, the word processor WP and the Animation program Egon. 
+Siag Office is a free office package for Unix, including word
+processor, spreadsheet and presentation graphics. It is a bundling of
+the spreadsheet SIAG, the word processor WP and the Animation program
+Egon.
 
 %prep
-%setup 
+%setup -q 
 
 %build
 autoconf
@@ -23,9 +30,11 @@ CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr
 make
 
 %install
+rm -rf $RPM_BUILD_ROOT
 make install prefix=$RPM_BUILD_ROOT/usr 
 
 %files
+%defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog  FILES INSTALL NEWS NLS README
 %doc common/docs/Copyright
 %doc common/docs/credits.html
@@ -103,109 +112,94 @@ make install prefix=$RPM_BUILD_ROOT/usr
 /usr/man/man1/pw.1
 /usr/man/man1/egon.1
 /usr/man/man1/dummy_plugin.1
-/usr/share/siag/siod/siod.scm
-/usr/share/siag/common/bitmaps/blank.xpm
-/usr/share/siag/common/bitmaps/bold.xpm
-/usr/share/siag/common/bitmaps/borders.xpm
-/usr/share/siag/common/bitmaps/copy.xpm
-/usr/share/siag/common/bitmaps/copyright.xpm
-/usr/share/siag/common/bitmaps/cut.xpm
-/usr/share/siag/common/bitmaps/egon_fg.xpm
-/usr/share/siag/common/bitmaps/fld_open.xpm
-/usr/share/siag/common/bitmaps/floppy3.xpm
-/usr/share/siag/common/bitmaps/grid.xpm
-/usr/share/siag/common/bitmaps/hcenter.xpm
-/usr/share/siag/common/bitmaps/hleft.xpm
-/usr/share/siag/common/bitmaps/hright.xpm
-/usr/share/siag/common/bitmaps/info.xpm
-/usr/share/siag/common/bitmaps/italic.xpm
-/usr/share/siag/common/bitmaps/new.xpm
-/usr/share/siag/common/bitmaps/next.xpm
-/usr/share/siag/common/bitmaps/none.xpm
-/usr/share/siag/common/bitmaps/paste.xpm
-/usr/share/siag/common/bitmaps/play.xpm
-/usr/share/siag/common/bitmaps/plotter.xpm
-/usr/share/siag/common/bitmaps/preview.xpm
-/usr/share/siag/common/bitmaps/previous.xpm
-/usr/share/siag/common/bitmaps/printer.xpm
-/usr/share/siag/common/bitmaps/pw_fg.xpm
-/usr/share/siag/common/bitmaps/redo.xpm
-/usr/share/siag/common/bitmaps/siag_fg.xpm
-/usr/share/siag/common/bitmaps/sigma.xpm
-/usr/share/siag/common/bitmaps/sortaz.xpm
-/usr/share/siag/common/bitmaps/sortza.xpm
-/usr/share/siag/common/bitmaps/spell.xpm
-/usr/share/siag/common/bitmaps/stop.xpm
-/usr/share/siag/common/bitmaps/uchar.xpm
-/usr/share/siag/common/bitmaps/uline.xpm
-/usr/share/siag/common/bitmaps/undo.xpm
-/usr/share/siag/common/bitmaps/vbottom.xpm
-/usr/share/siag/common/bitmaps/vtop.xpm
-/usr/share/siag/common/bitmaps/back.xpm
-/usr/share/siag/common/bitmaps/cancel.xpm
-/usr/share/siag/common/bitmaps/home.xpm
-/usr/share/siag/common/bitmaps/quit.xpm
-/usr/share/siag/common/bitmaps/reload.xpm
-/usr/share/siag/common/bitmaps/search.xpm
-/usr/share/siag/common/bitmaps/ksiag.xpm
-/usr/share/siag/common/any2xpm
-/usr/share/siag/common/colors.scm
-/usr/share/siag/common/fonts.scm
-/usr/share/siag/common/tools.scm
-/usr/share/siag/common/dictionary.sv
-/usr/share/siag/common/dictionary.es
-/usr/share/siag/common/dictionary.de
-/usr/share/siag/common/dictionary.fr
-/usr/share/siag/common/dictionary.no
-/usr/share/siag/xcommon/StringDefs.scm
-/usr/share/siag/xcommon/form.scm
-/usr/share/siag/siag/123.scm
-/usr/share/siag/siag/data.scm
-/usr/share/siag/siag/external.load
-/usr/share/siag/siag/external.save
-/usr/share/siag/siag/filemgr.scm
-/usr/share/siag/siag/find.scm
-/usr/share/siag/siag/keytable.scm
-/usr/share/siag/siag/mailto.scm
-/usr/share/siag/siag/menu.scm
-/usr/share/siag/siag/plot.scm
-/usr/share/siag/siag/siag-http.scm
-/usr/share/siag/siag/siag-net.scm
-/usr/share/siag/siag/siag.scm
-/usr/share/siag/siag/sort.scm
-/usr/share/siag/siag/splot.scm
-/usr/share/siag/siag/styles.scm
-/usr/share/siag/siag/usermgr.scm
-/usr/share/siag/pw/external.load
-/usr/share/siag/pw/external.save
-/usr/share/siag/pw/menu.scm
-/usr/share/siag/pw/pw.scm
-/usr/share/siag/pw/styles.scm
-/usr/share/siag/egon/animator.scm
-/usr/share/siag/egon/egon.scm
-/usr/share/siag/egon/menu.scm
-/usr/share/siag/egon/external.load
-/usr/share/siag/egon/external.save
-/usr/share/siag/plugins/dummy.scm
-/usr/share/siag/plugins/plugin.scm
-/usr/bin/siag
-/usr/bin/pw
-/usr/bin/egon
-/usr/libexec/siag/plugins/dummy
-/usr/libexec/siag/plugins/image
-/usr/libexec/siag/plugins/hello
-
-%changelog
-* Sat Feb 20 1999 Pablo Costa <pablo@shark.ib.usp.br>
-- upgrade to the version 3.1.6
-- Compile with quile, tcl and Xaw3d
-
-* Sat Jan  2 1999 Kjetil Wiekhorst Jørgensen <jorgens+rpm@pvv.org>
-
-- upgraded to version 3.1.3
-
-* Wed Dec  2 1998 Kjetil Wiekhorst Jørgensen <jorgens+rpm@pvv.org>
-- upgraded to version 3.1.0
-
-* Sat Jul 4 1998 Jason Spangler <jasons@usemail.com>
-  - initial creation of RPM
+%{_datadir}/siag/siod/siod.scm
+%{_datadir}/siag/common/bitmaps/blank.xpm
+%{_datadir}/siag/common/bitmaps/bold.xpm
+%{_datadir}/siag/common/bitmaps/borders.xpm
+%{_datadir}/siag/common/bitmaps/copy.xpm
+%{_datadir}/siag/common/bitmaps/copyright.xpm
+%{_datadir}/siag/common/bitmaps/cut.xpm
+%{_datadir}/siag/common/bitmaps/egon_fg.xpm
+%{_datadir}/siag/common/bitmaps/fld_open.xpm
+%{_datadir}/siag/common/bitmaps/floppy3.xpm
+%{_datadir}/siag/common/bitmaps/grid.xpm
+%{_datadir}/siag/common/bitmaps/hcenter.xpm
+%{_datadir}/siag/common/bitmaps/hleft.xpm
+%{_datadir}/siag/common/bitmaps/hright.xpm
+%{_datadir}/siag/common/bitmaps/info.xpm
+%{_datadir}/siag/common/bitmaps/italic.xpm
+%{_datadir}/siag/common/bitmaps/new.xpm
+%{_datadir}/siag/common/bitmaps/next.xpm
+%{_datadir}/siag/common/bitmaps/none.xpm
+%{_datadir}/siag/common/bitmaps/paste.xpm
+%{_datadir}/siag/common/bitmaps/play.xpm
+%{_datadir}/siag/common/bitmaps/plotter.xpm
+%{_datadir}/siag/common/bitmaps/preview.xpm
+%{_datadir}/siag/common/bitmaps/previous.xpm
+%{_datadir}/siag/common/bitmaps/printer.xpm
+%{_datadir}/siag/common/bitmaps/pw_fg.xpm
+%{_datadir}/siag/common/bitmaps/redo.xpm
+%{_datadir}/siag/common/bitmaps/siag_fg.xpm
+%{_datadir}/siag/common/bitmaps/sigma.xpm
+%{_datadir}/siag/common/bitmaps/sortaz.xpm
+%{_datadir}/siag/common/bitmaps/sortza.xpm
+%{_datadir}/siag/common/bitmaps/spell.xpm
+%{_datadir}/siag/common/bitmaps/stop.xpm
+%{_datadir}/siag/common/bitmaps/uchar.xpm
+%{_datadir}/siag/common/bitmaps/uline.xpm
+%{_datadir}/siag/common/bitmaps/undo.xpm
+%{_datadir}/siag/common/bitmaps/vbottom.xpm
+%{_datadir}/siag/common/bitmaps/vtop.xpm
+%{_datadir}/siag/common/bitmaps/back.xpm
+%{_datadir}/siag/common/bitmaps/cancel.xpm
+%{_datadir}/siag/common/bitmaps/home.xpm
+%{_datadir}/siag/common/bitmaps/quit.xpm
+%{_datadir}/siag/common/bitmaps/reload.xpm
+%{_datadir}/siag/common/bitmaps/search.xpm
+%{_datadir}/siag/common/bitmaps/ksiag.xpm
+%{_datadir}/siag/common/any2xpm
+%{_datadir}/siag/common/colors.scm
+%{_datadir}/siag/common/fonts.scm
+%{_datadir}/siag/common/tools.scm
+%{_datadir}/siag/common/dictionary.sv
+%{_datadir}/siag/common/dictionary.es
+%{_datadir}/siag/common/dictionary.de
+%{_datadir}/siag/common/dictionary.fr
+%{_datadir}/siag/common/dictionary.no
+%{_datadir}/siag/xcommon/StringDefs.scm
+%{_datadir}/siag/xcommon/form.scm
+%{_datadir}/siag/siag/123.scm
+%{_datadir}/siag/siag/data.scm
+%{_datadir}/siag/siag/external.load
+%{_datadir}/siag/siag/external.save
+%{_datadir}/siag/siag/filemgr.scm
+%{_datadir}/siag/siag/find.scm
+%{_datadir}/siag/siag/keytable.scm
+%{_datadir}/siag/siag/mailto.scm
+%{_datadir}/siag/siag/menu.scm
+%{_datadir}/siag/siag/plot.scm
+%{_datadir}/siag/siag/siag-http.scm
+%{_datadir}/siag/siag/siag-net.scm
+%{_datadir}/siag/siag/siag.scm
+%{_datadir}/siag/siag/sort.scm
+%{_datadir}/siag/siag/splot.scm
+%{_datadir}/siag/siag/styles.scm
+%{_datadir}/siag/siag/usermgr.scm
+%{_datadir}/siag/pw/external.load
+%{_datadir}/siag/pw/external.save
+%{_datadir}/siag/pw/menu.scm
+%{_datadir}/siag/pw/pw.scm
+%{_datadir}/siag/pw/styles.scm
+%{_datadir}/siag/egon/animator.scm
+%{_datadir}/siag/egon/egon.scm
+%{_datadir}/siag/egon/menu.scm
+%{_datadir}/siag/egon/external.load
+%{_datadir}/siag/egon/external.save
+%{_datadir}/siag/plugins/dummy.scm
+%{_datadir}/siag/plugins/plugin.scm
+%attr(755,root,root) %{_bindir}/siag
+%attr(755,root,root) %{_bindir}/pw
+%attr(755,root,root) %{_bindir}/egon
+%{_libdir}exec/siag/plugins/dummy
+%{_libdir}exec/siag/plugins/image
+%{_libdir}exec/siag/plugins/hello

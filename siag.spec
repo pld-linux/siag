@@ -211,23 +211,8 @@ oraz Encapsulated Postscript (*.eps). Wykorzystuje w tym celu
 oprogramowanie Alladin Ghostscript. Gvu jest czê¶ci± pakietu biurowego
 Siag Office.
 
-%package -n XawM
-Summary:	Modified version of X athena widgets in 3d (Xaw3d)
-Summary(pl):	Zmodyfikowana wersja trójwymiarowych widgetów athena
-Group:		X11/Libraries
-
-%description -n XawM
-XawM is modified version of X athena widgets in 3d (Xaw3d). It adds 3d
-look to applications running under Xwindow.
-
-%description -n XawM -l pl
-XawM jest zmodyfikowan± wersj± trójowymiarowych widgetów atheny
-(Xaw3d). Dodaje "trójwymiarowo¶æ" interfejsom aplikacji dzia³aj±cych
-pod X Window.
-
 %prep
 %setup -q
-#%patch -p1
 
 %build
 CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
@@ -259,9 +244,6 @@ install egon/examples/*.egon $RPM_BUILD_ROOT%{_datadir}/siag/examples/egon
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -n XawM -p /sbin/ldconfig
-%postun -n XawM -p /sbin/ldconfig
-
 %files
 %defattr(644,root,root,755)
 #FILES need patching
@@ -271,18 +253,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/mgptotxt
 %attr(755,root,root) %{_bindir}/siaghelp
 %attr(755,root,root) %{_bindir}/siagrun
-#%%{_datadir}/siag/common/FontDataBase
-#%%{_datadir}/siag/common/IsoLatin1.enc
-#%%{_datadir}/siag/common/IsoLatin2.enc
 %attr(755,root,root) %{_datadir}/siag/common/any2xpm
 %{_datadir}/siag/common/common.scm
 #here should be something with lang or not?
 %{_datadir}/siag/common/dictionary.*
-#%%{_datadir}/siag/common/fonts.txt
 %{_datadir}/siag/common/position.scm
-#%%{_datadir}/siag/common/rgb.txt
-#%%{_datadir}/siag/common/t1lib.config
 %{_datadir}/siag/common/tools.scm
+%{_datadir}/siag/common/bitmaps/addressbook.xpm
 %{_datadir}/siag/common/bitmaps/SO3.xpm
 %{_datadir}/siag/common/bitmaps/back.xpm
 %{_datadir}/siag/common/bitmaps/blank.xpm
@@ -292,6 +269,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/borders.xpm
 %{_datadir}/siag/common/bitmaps/cancel.xpm
 %{_datadir}/siag/common/bitmaps/center.xpm
+%{_datadir}/siag/common/bitmaps/composer.xpm
 %{_datadir}/siag/common/bitmaps/compress.xpm
 %{_datadir}/siag/common/bitmaps/copy.xpm
 %{_datadir}/siag/common/bitmaps/copyright.xpm
@@ -318,8 +296,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/landscape.xpm
 %{_datadir}/siag/common/bitmaps/larger.xpm
 %{_datadir}/siag/common/bitmaps/lline.xpm
+%{_datadir}/siag/common/bitmaps/mail.xpm
+%{_datadir}/siag/common/bitmaps/navigator.xpm
 %{_datadir}/siag/common/bitmaps/netscape.xpm
 %{_datadir}/siag/common/bitmaps/new.xpm
+%{_datadir}/siag/common/bitmaps/news.xpm
 %{_datadir}/siag/common/bitmaps/next.xpm
 %{_datadir}/siag/common/bitmaps/none.xpm
 %{_datadir}/siag/common/bitmaps/overwrite.xpm
@@ -336,6 +317,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/rline.xpm
 %{_datadir}/siag/common/bitmaps/save.xpm
 %{_datadir}/siag/common/bitmaps/search.xpm
+%{_datadir}/siag/common/bitmaps/security.xpm
 %{_datadir}/siag/common/bitmaps/siagoffice.xpm
 %{_datadir}/siag/common/bitmaps/sigma.xpm
 %{_datadir}/siag/common/bitmaps/smaller.xpm
@@ -344,6 +326,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/sortza.xpm
 %{_datadir}/siag/common/bitmaps/spell.xpm
 %{_datadir}/siag/common/bitmaps/stop.xpm
+%{_datadir}/siag/common/bitmaps/table.xpm
 %{_datadir}/siag/common/bitmaps/uchar.xpm
 %{_datadir}/siag/common/bitmaps/uline.xpm
 %{_datadir}/siag/common/bitmaps/undo.xpm
@@ -352,62 +335,21 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/viewmode.xpm
 %{_datadir}/siag/common/bitmaps/vtop.xpm
 %{_datadir}/siag/common/bitmaps/xterm16.xpm
-%{_datadir}/siag/common/bitmaps/kde/back.xpm
-%{_datadir}/siag/common/bitmaps/kde/cancel.xpm
-%{_datadir}/siag/common/bitmaps/kde/copy.xpm
-%{_datadir}/siag/common/bitmaps/kde/cut.xpm
-%{_datadir}/siag/common/bitmaps/kde/fld_open.xpm
-%{_datadir}/siag/common/bitmaps/kde/forward.xpm
-%{_datadir}/siag/common/bitmaps/kde/home.xpm
-%{_datadir}/siag/common/bitmaps/kde/info.xpm
-%{_datadir}/siag/common/bitmaps/kde/larger.xpm
-%{_datadir}/siag/common/bitmaps/kde/new.xpm
-%{_datadir}/siag/common/bitmaps/kde/next.xpm
-%{_datadir}/siag/common/bitmaps/kde/paste.xpm
-%{_datadir}/siag/common/bitmaps/kde/play.xpm
-%{_datadir}/siag/common/bitmaps/kde/preview.xpm
-%{_datadir}/siag/common/bitmaps/kde/previous.xpm
-%{_datadir}/siag/common/bitmaps/kde/printer.xpm
-%{_datadir}/siag/common/bitmaps/kde/quit.xpm
-%{_datadir}/siag/common/bitmaps/kde/reload.xpm
-%{_datadir}/siag/common/bitmaps/kde/save.xpm
-%{_datadir}/siag/common/bitmaps/kde/saveas.xpm
-%{_datadir}/siag/common/bitmaps/kde/search.xpm
-%{_datadir}/siag/common/bitmaps/kde/smaller.xpm
-%{_datadir}/siag/common/bitmaps/kde/stop.xpm
-%{_datadir}/siag/common/bitmaps/gnome/back.xpm
-%{_datadir}/siag/common/bitmaps/gnome/bold.xpm
-%{_datadir}/siag/common/bitmaps/gnome/cancel.xpm
-%{_datadir}/siag/common/bitmaps/gnome/copy.xpm
-%{_datadir}/siag/common/bitmaps/gnome/cut.xpm
-%{_datadir}/siag/common/bitmaps/gnome/fld_open.xpm
-%{_datadir}/siag/common/bitmaps/gnome/forward.xpm
-%{_datadir}/siag/common/bitmaps/gnome/hcenter.xpm
-%{_datadir}/siag/common/bitmaps/gnome/hleft.xpm
-%{_datadir}/siag/common/bitmaps/gnome/home.xpm
-%{_datadir}/siag/common/bitmaps/gnome/hright.xpm
-%{_datadir}/siag/common/bitmaps/gnome/info.xpm
-%{_datadir}/siag/common/bitmaps/gnome/italic.xpm
-%{_datadir}/siag/common/bitmaps/gnome/new.xpm
-%{_datadir}/siag/common/bitmaps/gnome/next.xpm
-%{_datadir}/siag/common/bitmaps/gnome/paste.xpm
-%{_datadir}/siag/common/bitmaps/gnome/play.xpm
-%{_datadir}/siag/common/bitmaps/gnome/previous.xpm
-%{_datadir}/siag/common/bitmaps/gnome/printer.xpm
-%{_datadir}/siag/common/bitmaps/gnome/quit.xpm
-%{_datadir}/siag/common/bitmaps/gnome/redo.xpm
-%{_datadir}/siag/common/bitmaps/gnome/reload.xpm
-%{_datadir}/siag/common/bitmaps/gnome/save.xpm
-%{_datadir}/siag/common/bitmaps/gnome/saveas.xpm
-%{_datadir}/siag/common/bitmaps/gnome/search.xpm
-%{_datadir}/siag/common/bitmaps/gnome/spell.xpm
-%{_datadir}/siag/common/bitmaps/gnome/stop.xpm
-%{_datadir}/siag/common/bitmaps/gnome/uchar.xpm
-%{_datadir}/siag/common/bitmaps/gnome/undo.xpm
+%{_datadir}/siag/common/bitmaps/kde
+%{_datadir}/siag/common/bitmaps/kde2
+%{_datadir}/siag/common/bitmaps/ms
+%{_datadir}/siag/common/bitmaps/gnome
+%{_datadir}/siag/common/themes/theme.athena
+%{_datadir}/siag/common/themes/theme.classic
+%{_datadir}/siag/common/themes/theme.gnome
+%{_datadir}/siag/common/themes/theme.kde
+%{_datadir}/siag/common/themes/theme.kde2
+%{_datadir}/siag/common/themes/theme.ms
 %{_datadir}/siag/siod/siod.scm
 %{_datadir}/siag/xcommon/StringDefs.scm
 %{_datadir}/siag/xcommon/form.scm
 %{_mandir}/man1/siod.1*
+
 
 %files siag
 %defattr(644,root,root,755)
@@ -434,6 +376,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/siag/styles.scm
 %{_datadir}/siag/siag/toolbar.scm
 %{_datadir}/siag/siag/usermgr.scm
+%{_datadir}/siag/siag/ccmath.scm
+%{_datadir}/siag/siag/functions.scm
+%{_datadir}/siag/siag/trans.scm
 %{_datadir}/siag/common/bitmaps/siag.xpm
 %{_datadir}/siag/examples/siag/*
 %{_mandir}/man1/siag.1*
@@ -451,9 +396,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/pw/pw.scm
 %{_datadir}/siag/pw/styles.scm
 %{_datadir}/siag/common/bitmaps/pw.xpm
-#%%{_datadir}/siag/common/bitmaps/ctab.xpm
-#%%{_datadir}/siag/common/bitmaps/ltab.xpm
-#%%{_datadir}/siag/common/bitmaps/rtab.xpm
 %{_datadir}/siag/common/bitmaps/strike.xpm
 %{_datadir}/siag/common/bitmaps/hfull.xpm
 %{_datadir}/siag/examples/pw/*
@@ -496,6 +438,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/siag/xfiler/makeicons
 %{_datadir}/siag/common/bitmaps/xfiler.xpm
 %{_mandir}/man1/xfiler.1*
+%{_mandir}/man1/runcmd.1*
 %{_applnkdir}/Utilities/xfiler.desktop
 %{_pixmapsdir}/xfiler.png
 #BITMAPS MISSING!!!
@@ -522,8 +465,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/gvu.1*
 %{_applnkdir}/Graphics/Viewers/gvu.desktop
 %{_pixmapsdir}/gvu.png
-
-%files -n XawM
-%defattr(644,root,root,755)
-%doc XawM/README*
-#%%attr(755,root,root) %{_libdir}/libXawM.so.*.*

@@ -1,0 +1,12 @@
+diff -ru siag-3.3.11/siag/railway.c siag-3.3.11.AX/siag/railway.c
+--- siag-3.3.11/siag/railway.c	Thu Apr  6 14:53:22 2000
++++ siag-3.3.11.AX/siag/railway.c	Wed Aug  9 16:39:17 2000
+@@ -375,7 +375,7 @@
+ void ref_expander(buffer *buf, char *src, char *dest,
+ 		char *brk, char *tmpl, char *rng)
+ {
+-	int a1_refs = buf->a1_refs;
++	int a1_refs = (buf == NULL) || buf->a1_refs;
+ 	ref_state state = REF_START;
+ 	char *exp;
+ 	char *start, *end;

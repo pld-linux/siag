@@ -1,11 +1,11 @@
 Summary:	Siag Office
 Name:		siag
-Version:	3.3.11
+Version:	3.4.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(pl):	X11/Aplikacje
-Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.bz2
+Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.gz
 Source1:	gvu.desktop
 Source2:	%{name}.desktop
 Source3:	xfiler.desktop
@@ -13,7 +13,6 @@ Source4:	egon.desktop
 Source5:	pw.desktop
 Source6:	xedplus.desktop
 URL:		http://siag.nu/
-Patch0:		%{name}-ref_expander-bug.patch
 #BuildRequires:	tcl-devel
 #BuildRequires:	python-devel
 BuildRequires:	XFree86-devel
@@ -222,7 +221,7 @@ pod X window.
 
 %prep
 %setup -q 
-%patch -p1
+#%patch -p1
 
 %build
 %configure
@@ -407,7 +406,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS.gz ChangeLog.gz FILES.gz NEWS.gz NLS.gz README.gz
 %doc common/docs/Copyright.gz
 %doc common/docs/credits.html.gz
-%doc common/docs/embedding.html.gz
+#%doc common/docs/embedding.html.gz
 %doc common/docs/form.html.gz
 %doc common/docs/interpreters.html.gz
 %doc common/docs/office.html.gz
@@ -472,7 +471,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/pw/pw.scm
 %{_datadir}/siag/pw/styles.scm
 %{_datadir}/siag/common/bitmaps/pw.xpm
-%doc pw/docs/BUGS.gz
+%{_datadir}/siag/common/bitmaps/ctab.xpm
+%{_datadir}/siag/common/bitmaps/ltab.xpm
+%{_datadir}/siag/common/bitmaps/rtab.xpm
+%{_datadir}/siag/common/bitmaps/strike.xpm
+%{_datadir}/siag/common/bitmaps/hfull.xpm
+#%doc pw/docs/BUGS.gz
 %doc pw/docs/TODO.gz
 %doc pw/docs/commands.html.gz
 %doc pw/docs/concepts.html.gz
@@ -547,13 +551,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files plugins
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}exec/siag/plugins/clipart
-%attr(755,root,root) %{_libdir}exec/siag/plugins/dummy
-%attr(755,root,root) %{_libdir}exec/siag/plugins/form
-%attr(755,root,root) %{_libdir}exec/siag/plugins/hello
-%attr(755,root,root) %{_libdir}exec/siag/plugins/image
-%attr(755,root,root) %{_libdir}exec/siag/plugins/plot
-%attr(755,root,root) %{_libdir}exec/siag/plugins/text
+%attr(755,root,root) %{_libdir}/siag/plugins/clipart
+%attr(755,root,root) %{_libdir}/siag/plugins/dummy
+%attr(755,root,root) %{_libdir}/siag/plugins/form
+%attr(755,root,root) %{_libdir}/siag/plugins/hello
+%attr(755,root,root) %{_libdir}/siag/plugins/image
+%attr(755,root,root) %{_libdir}/siag/plugins/plot
+%attr(755,root,root) %{_libdir}/siag/plugins/text
 %doc plugins/README.gz
 %doc plugins/TODO.gz
 %{_datadir}/siag/plugins/dummy.scm

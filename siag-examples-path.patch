@@ -1,0 +1,42 @@
+diff -Nur siag-3.4.10.orig/xegon/xegon.c siag-3.4.10/xegon/xegon.c
+--- siag-3.4.10.orig/xegon/xegon.c	Fri Jun 23 21:36:12 2000
++++ siag-3.4.10/xegon/xegon.c	Sun Nov 30 04:18:12 2003
+@@ -39,8 +39,8 @@
+ int select_file(char *path, char *name, char *patterns[], char *fmt, int e)
+ {
+         char extra[1024];
+-        sprintf(extra, "Home=%s:Examples=%s/egon/examples",
+-                getenv("HOME"), docdir);
++        sprintf(extra, "Home=%s:Examples=/usr/X11R6/share/siag/examples/egon",
++                getenv("HOME"));
+         return fsel_input(topLevel, path, name, patterns, fmt, extra, e);
+ }
+ 
+diff -Nur siag-3.4.10.orig/xpw/xpw.c siag-3.4.10/xpw/xpw.c
+--- siag-3.4.10.orig/xpw/xpw.c	Thu Dec 14 17:00:20 2000
++++ siag-3.4.10/xpw/xpw.c	Sun Nov 30 04:18:31 2003
+@@ -68,8 +68,8 @@
+ int select_file(char *path, char *name, char *patterns[], char *fmt, int e)
+ {
+ 	char extra[1024];
+-	sprintf(extra, "Home=%s:Examples=%s/pw/examples",
+-		getenv("HOME"), docdir);
++	sprintf(extra, "Home=%s:Examples=/usr/X11R6/share/siag/examples/pw",
++		getenv("HOME"));
+ 	return fsel_input(topLevel, path, name, patterns, fmt, extra, e);
+ }
+ 
+diff -Nur siag-3.4.10.orig/xsiag/xsiag.c siag-3.4.10/xsiag/xsiag.c
+--- siag-3.4.10.orig/xsiag/xsiag.c	Thu Dec 14 16:54:39 2000
++++ siag-3.4.10/xsiag/xsiag.c	Sun Nov 30 04:19:14 2003
+@@ -43,8 +43,8 @@
+ int select_file(char *path, char *name, char *patterns[], char *fmt, int e)
+ {
+ 	char extra[1024];
+-	sprintf(extra, "Home=%s:Examples=%s/siag/examples",
+-		getenv("HOME"), docdir);
++	sprintf(extra, "Home=%s:Examples=/usr/X11R6/share/siag/examples/siag",
++		getenv("HOME"));
+ 	return fsel_input(topLevel, path, name, patterns, fmt, extra, e);
+ }
+ 

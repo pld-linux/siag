@@ -1,4 +1,5 @@
 Summary:	Siag Office
+Summary(pl):	Pakiet biurowy Siag Office
 Name:		siag
 Version:	3.4.10
 Release:	2
@@ -12,8 +13,6 @@ Source4:	egon.desktop
 Source5:	pw.desktop
 Source6:	xedplus.desktop
 URL:		http://siag.nu/
-#BuildRequires:	tcl-devel
-#BuildRequires:	python-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	bzip2-devel
 BuildRequires:	freetype1-devel
@@ -21,6 +20,8 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	ncurses-devel
+#BuildRequires:	python-devel
+#BuildRequires:	tcl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -56,7 +57,7 @@ Tables. Additional formats can be supported by using external
 converters, such as xls2csv for Microsoft Excel.
 
 %description siag -l pl
-Siag jest arkuszem kalkulacyjnym bazuj±cym na systemie Xwindow oraz
+Siag jest arkuszem kalkulacyjnym bazuj±cym na systemie X Window oraz
 jêzyku Scheme. Posiada wiele, bardzo wiele funkcji. Jest wyposa¿ony
 nawet w serwer WWW! Siag jest czê¶ci± pakietu biurowego Siag Office.
 
@@ -82,10 +83,10 @@ using external converter called WV.
 
 %description pw -l pl
 Pathetic Writer jest procesorem tekstów bazowanym na systemie X
-window. Jest on czê¶ci± pakietu biurowego Siag Office.
+Window. Jest on czê¶ci± pakietu biurowego Siag Office.
 
 Wspierane formaty plików: Pathetic Writer, tekst, Postscript, HTML,
-RTF. Niektóre z nich w ymagaj± zewnêtrznego konwertera o nazwie WV.
+RTF. Niektóre z nich wymagaj± zewnêtrznego konwertera o nazwie WV.
 
 %package egon
 Summary:	Egon Animator - Siag Office animation software
@@ -107,7 +108,7 @@ Sorry but it is currently useless - it segfaults.
 
 %description egon -l pl
 Egon Animator jest narzêdziem do tworzenia animacji bazowanym na
-systemie X window. Zasada dzia³ania polega na tym, ¿e "obiekty"
+systemie X Window. Zasada dzia³ania polega na tym, ¿e "obiekty"
 (prostok±ty, linie, obrazki itd.) s± dodawane do "sceny", gdzie
 wykonuj± odpowiednie polecenia wskazuj±ce, kiedy i gdzie maj± siê
 pojawiæ. Egon Animator jest czê¶ci± pakietu biurowego Siag Office.
@@ -117,7 +118,7 @@ GIF, Postscript, tekst, HTML, Magic Point, MS Powerpoint (wymagany
 program pptHtml).
 
 Niestety chwilowo program jest bezu¿yteczny, gdy¿ wywo³uje naruszenie
-pamiêci.
+ochrony pamiêci.
 
 %package xedplus
 Summary:	Siag Office simple but powerful text editor
@@ -153,6 +154,7 @@ u¿ytkownika. Xfiler jest czê¶ci± pakietu biurowego Siag Office.
 
 %package plugins
 Summary:	Plugins to use with Siag Office package
+Summary(pl):	Wtyczki do u¿ywania z pakietem Siag Office
 Group:		X11/Applications
 
 %description plugins
@@ -171,18 +173,18 @@ not mentioned here):
   code to make a plugin of a normal X program.
 
 %description plugins -l pl
-Zawiera kilka pluginów dla pakietu biurowego Siag Office (jest ich
+Zawiera kilka wtyczek dla pakietu biurowego Siag Office (jest ich
 trochê wiêcej ni¿ opisanych tutaj):
 
 - The Image Plugin - wy¶wietla najbardziej popularne formaty plików
   je¶li jest zainstalowany zestaw konwerterów NETPBM. W przeciwnym
   wypadku bêdzie wy¶wietla³ tylko grafikê w formacie XPM.
-- The Dummy Plugin - dzia³a jako swoisty interfejst poimiêdzy Siagiem
-  a inna aplikacj±. Komunikuje siê protoko³em pluginów ze Siag i robi,
-  co potrafi, aby zarz±dz±æ zewnêtrzn± aplikacj±.
+- The Dummy Plugin - dzia³a jako swoisty interfejs pomiêdzy Siagiem
+  a inna aplikacj±. Komunikuje siê protoko³em wtyczek ze Siag i robi,
+  co potrafi, aby zarz±dzaæ zewnêtrzn± aplikacj±.
 - The Hello Plugin - stworzony dla celów demonstracyjnych: wy¶wietla
-  komunikat "Hello, World"" w swoim oknie. Jest doskona³ym przyk³adem,
-  który mo¿e pos³u¿yæ do stworzenia w pe³ni dzia³aj±cego pluginu.
+  komunikat "Hello, World" w swoim oknie. Jest doskona³ym przyk³adem,
+  który mo¿e pos³u¿yæ do stworzenia w pe³ni dzia³aj±cej wtyczki.
 
 %package gvu
 Summary:	Siag Office graphics previewer
@@ -203,7 +205,7 @@ Siag Office.
 
 %package -n XawM
 Summary:	Modified version of X athena widgets in 3d (Xaw3d)
-Summary(pl):	Zmodyfikowana wersja trójwymiarowych widgetów athena.
+Summary(pl):	Zmodyfikowana wersja trójwymiarowych widgetów athena
 Group:		X11/Libraries
 
 %description -n XawM
@@ -213,7 +215,7 @@ look to applications running under Xwindow.
 %description -n XawM -l pl
 XawM jest zmodyfikowan± wersj± trójowymiarowych widgetów atheny
 (Xaw3d). Dodaje "trójwymiarowo¶æ" interfejsom aplikacji dzia³aj±cych
-pod X window.
+pod X Window.
 
 %prep
 %setup -q
@@ -508,4 +510,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -n XawM
 %defattr(644,root,root,755)
 %doc XawM/README*
-%{_libdir}/libXawM.so.*.*
+%attr(755,root,root) %{_libdir}/libXawM.so.*.*

@@ -7,5 +7,6 @@ Exec=pw
 Icon=pw.png
 Terminal=false
 Type=Application
+Categories=Office;WordProcessor;
 Encoding=UTF-8
 # vi: encoding=utf-8

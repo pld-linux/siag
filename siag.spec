@@ -43,7 +43,7 @@ Install this package if you want to use any of Siag Office programs.
 %description -l pl
 Siag Office jest ¶ci¶le zintegrowanym, szybkim darmowym pakietem
 biurowym. Sk³ada siê z arkusza kalkulacyjnego Siag, procesora tekstów
-PW, programu do animacji egon, edytora tekstowego XedPlus, mened¿era
+PW, programu do animacji egon, edytora tekstowego XedPlus, zarz±dcy
 plików Xfiler oraz przegl±darki Gvu.
 
 %package siag
@@ -144,7 +144,7 @@ wywo³aæ seda. Xedplus jest czê¶ci± pakietu biurowego Siag Office.
 
 %package xfiler
 Summary:	Siag Office file manager
-Summary(pl):	Mened¿er plików Siag Office
+Summary(pl):	Zarz±dca plików Siag Office
 Group:		X11/Applications
 Requires:       %{name} = %{version}
 
@@ -154,9 +154,9 @@ manage your filesystem. Suits almost all needs of plain user. Xfiler
 is a part of free Siag Office package.
 
 %description xfiler -l pl
-Prosty i ³atwy w u¿yciu mened¿er plików. Posiada podstawowe komendy do
-zarz±dzania Twoim systemem plików. Wype³nia potrzeby zwyk³ego
-u¿ytkownika. Xfiler jest czê¶ci± pakietu biurowego Siag Office.
+Prosty i ³atwy w u¿yciu zarz±dca plików. Posiada podstawowe polecenia
+zarz±dzania systemem plików. Spe³nia potrzeby zwyk³ego u¿ytkownika.
+Xfiler jest czê¶ci± pakietu biurowego Siag Office.
 
 %package plugins
 Summary:	Plugins to use with Siag Office package

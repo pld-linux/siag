@@ -377,7 +377,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/siag.xpm
 %{_datadir}/siag/examples/siag/*
 %{_mandir}/man1/siag.1*
-%{_desktopdir}
+%{_desktopdir}/siag.desktop
 %{_pixmapsdir}/siag.png
 
 %files pw
@@ -395,7 +395,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/hfull.xpm
 %{_datadir}/siag/examples/pw/*
 %{_mandir}/man1/pw.1*
-%{_desktopdir}
+%{_desktopdir}/pw.desktop
 %{_pixmapsdir}/pw.png
 
 %files egon
@@ -411,7 +411,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/egon.xpm
 %{_datadir}/siag/examples/egon/*
 %{_mandir}/man1/egon.1*
-%{_desktopdir}
+%{_desktopdir}/egon.desktop
 %{_pixmapsdir}/egon.png
 
 %files xedplus
@@ -420,7 +420,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xedplus
 %{_datadir}/siag/common/bitmaps/xedplus.xpm
 %{_mandir}/man1/xedplus.1*
-%{_desktopdir}
+%{_desktopdir}/xedplus.desktop
 %{_pixmapsdir}/xedplus.png
 
 %files xfiler
@@ -434,7 +434,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/common/bitmaps/xfiler.xpm
 %{_mandir}/man1/xfiler.1*
 %{_mandir}/man1/runcmd.1*
-%{_desktopdir}
+%{_desktopdir}/xfiler.desktop
 %{_pixmapsdir}/xfiler.png
 #BITMAPS MISSING!!!
 
@@ -458,5 +458,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gvu
 %{_datadir}/siag/common/bitmaps/gvu.xpm
 %{_mandir}/man1/gvu.1*
-%{_desktopdir}
+%{_desktopdir}/gvu.desktop
 %{_pixmapsdir}/gvu.png

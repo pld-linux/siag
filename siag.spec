@@ -1,7 +1,7 @@
 Summary:	Siag Office
 Name:		siag
 Version:	3.4.10
-Release:	2
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.gz

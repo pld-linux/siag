@@ -1,7 +1,7 @@
 Summary:	Siag Office
 Name:		siag
 Version:	3.4.10
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.gz
@@ -226,9 +226,9 @@ CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Office/{Editors,Spreadsheets,Wordprocessors} \
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Office/{Spreadsheets,Wordprocessors} \
 	$RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers \
-	$RPM_BUILD_ROOT%{_applnkdir}/Utilities \
+	$RPM_BUILD_ROOT%{_applnkdir}/{Editors,Utilities} \
 	$RPM_BUILD_ROOT%{_datadir}/siag/examples/{pw,siag,egon}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
@@ -238,17 +238,11 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Office/Spreadsheets
 install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Utilities
 install %{SOURCE4} $RPM_BUILD_ROOT%{_applnkdir}/Graphics
 install %{SOURCE5} $RPM_BUILD_ROOT%{_applnkdir}/Office/Wordprocessors
-install %{SOURCE6} $RPM_BUILD_ROOT%{_applnkdir}/Office/Editors
+install %{SOURCE6} $RPM_BUILD_ROOT%{_applnkdir}/Editors
 
 install pw/examples/*.{doc,pw,html,rtf,txt,bmk} $RPM_BUILD_ROOT%{_datadir}/siag/examples/pw
 install siag/examples/*.{wk1,siag,csv} $RPM_BUILD_ROOT%{_datadir}/siag/examples/siag
 install egon/examples/*.egon $RPM_BUILD_ROOT%{_datadir}/siag/examples/egon
-
-gzip -9nf AUTHORS ChangeLog FILES NEWS README \
-	{common,xcommon,siag,pw,egon,siod}/docs/* \
-	xed/{README,xedplus.html} \
-	xfiler/{README,xfiler.html} plugins/README \
-	gvu/README XawM/README{,.Linux,.XAW3D,.XawM}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -259,17 +253,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 #FILES need patching
-%doc AUTHORS.gz ChangeLog.gz FILES.gz NEWS.gz README.gz
-%doc common/docs/Copyright.gz
-%doc common/docs/credits.html.gz
-#%doc common/docs/embedding.html.gz
-%doc common/docs/form.html.gz
-%doc common/docs/interpreters.html.gz
-%doc common/docs/office.html.gz
-%doc common/docs/plugins.html.gz
-%doc common/docs/search.html.gz
-%doc common/docs/siaghelp.html.gz
-%doc siod/docs/siod.html.gz
+%doc AUTHORS ChangeLog FILES NEWS NLS README
+%doc common/docs/Copyright
+%doc common/docs/*.html
 %attr(755,root,root) %{_bindir}/mgptotxt
 %attr(755,root,root) %{_bindir}/siaghelp
 %attr(755,root,root) %{_bindir}/siagrun
@@ -413,23 +399,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files siag
 %defattr(644,root,root,755)
-%doc siag/docs/README.gz
-%doc siag/docs/TODO.gz
-%doc siag/docs/c-expr.html.gz
-%doc siag/docs/commands.html.gz
-%doc siag/docs/concepts.html.gz
-%doc siag/docs/fileformats.html.gz
-%doc siag/docs/form.html.gz
-%doc siag/docs/gnuplot.html.gz
-%doc siag/docs/intro.html.gz
-%doc siag/docs/invocation.html.gz
-%doc siag/docs/keys.html.gz
-%doc siag/docs/mouse.html.gz
-%doc siag/docs/scheme.html.gz
-%doc siag/docs/scrollbars.html.gz
-%doc siag/docs/siag.gif.gz
-%doc siag/docs/siag.html.gz
-%doc siag/docs/strings.html.gz
+%doc siag/docs/README
+%doc siag/docs/*.html
+%doc siag/docs/*.gif
 %attr(755,root,root) %{_bindir}/siag
 %attr(755,root,root) %{_bindir}/tsiag
 %{_datadir}/siag/siag/123.scm
@@ -457,22 +429,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files pw
 %defattr(644,root,root,755)
-#%doc pw/docs/BUGS.gz
-%doc pw/docs/TODO.gz
-%doc pw/docs/commands.html.gz
-%doc pw/docs/concepts.html.gz
-%doc pw/docs/fileformats.html.gz
-%doc pw/docs/intro.html.gz
-%doc pw/docs/invocation.html.gz
-%doc pw/docs/keys.html.gz
-%doc pw/docs/mouse.html.gz
-%doc pw/docs/pw.gif.gz
-%doc pw/docs/pw.html.gz
-%doc pw/docs/scheme.html.gz
-%doc pw/docs/scrollbars.html.gz
-%doc pw/docs/spell.html.gz
-%doc pw/docs/strings.html.gz
-%doc pw/docs/toolbar.html.gz
+%doc pw/docs/*.html
+%doc pw/docs/*.gif
 %attr(755,root,root) %{_bindir}/pw
 %{_datadir}/siag/pw/external.load
 %{_datadir}/siag/pw/external.save
@@ -491,21 +449,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files egon
 %defattr(644,root,root,755)
-%doc egon/docs/BUGS.gz
-%doc egon/docs/TODO.gz
-%doc egon/docs/commands.html.gz
-%doc egon/docs/concepts.html.gz
-%doc egon/docs/egon.gif.gz
-%doc egon/docs/egon.html.gz
-%doc egon/docs/fileformats.html.gz
-%doc egon/docs/intro.html.gz
-%doc egon/docs/invocation.html.gz
-%doc egon/docs/keys.html.gz
-%doc egon/docs/mouse.html.gz
-%doc egon/docs/scheme.html.gz
-%doc egon/docs/scrollbars.html.gz
-%doc egon/docs/strings.html.gz
-%doc egon/docs/toolbar.html.gz
+%doc egon/docs/*.html
+%doc egon/docs/*.gif
 %attr(755,root,root) %{_bindir}/egon
 %{_datadir}/siag/egon/animator.scm
 %{_datadir}/siag/egon/egon.scm
@@ -519,15 +464,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files xedplus
 %defattr(644,root,root,755)
-%doc xed/*.gz
+%doc xed/{README,xedplus.html}
 %attr(755,root,root) %{_bindir}/xedplus
 %{_datadir}/siag/common/bitmaps/xedplus.xpm
 %{_mandir}/man1/xedplus.1*
-%{_applnkdir}/Office/Editors/xedplus.desktop
+%{_applnkdir}/Editors/xedplus.desktop
 
 %files xfiler
 %defattr(644,root,root,755)
-%doc xfiler/*.gz
+%doc xfiler/{README,xfiler.html}
 %attr(755,root,root) %{_bindir}/xfiler
 %attr(755,root,root) %{_bindir}/runcmd
 %{_datadir}/siag/xfiler/FilesMagic
@@ -540,7 +485,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files plugins
 %defattr(644,root,root,755)
-%doc plugins/*.gz
+%doc plugins/README
 %attr(755,root,root) %{_libdir}/siag/plugins/clipart
 %attr(755,root,root) %{_libdir}/siag/plugins/dummy
 %attr(755,root,root) %{_libdir}/siag/plugins/form
@@ -554,7 +499,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files gvu
 %defattr(644,root,root,755)
-%doc gvu/*.gz
+%doc gvu/README
 %attr(755,root,root) %{_bindir}/gvu
 %{_datadir}/siag/common/bitmaps/gvu.xpm
 %{_mandir}/man1/gvu.1*
@@ -562,5 +507,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n XawM
 %defattr(644,root,root,755)
-%doc XawM/*.gz
+%doc XawM/README*
 %{_libdir}/libXawM.so.*.*

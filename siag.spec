@@ -1,11 +1,14 @@
+
+%define	_series	3.4
 Summary:	Siag Office
 Summary(pl):	Pakiet biurowy Siag Office
 Name:		siag
 Version:	3.4.10
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.gz
+Source0:	ftp://siag.nu/pub/siag/%{_series}/%{name}-%{version}.tar.gz
+# Source0-md5:	7a9ea46554499da20a3746f1111f1ac3
 Source1:	gvu.desktop
 Source2:	%{name}.desktop
 Source3:	xfiler.desktop
@@ -18,6 +21,7 @@ Source9:	xfiler.png
 Source10:	egon.png
 Source11:	pw.png
 Source12:	xedplus.png
+Patch0:		%{name}-examples-path.patch
 URL:		http://siag.nu/
 BuildRequires:	XFree86-devel
 BuildRequires:	bzip2-devel
@@ -225,7 +229,7 @@ pod X Window.
 
 %prep
 %setup -q
-#%patch -p1
+%patch0 -p1
 
 %build
 CFLAGS="%{rpmcflags} -I/usr/include/ncurses"

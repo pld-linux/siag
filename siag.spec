@@ -38,7 +38,7 @@ Egon.
 #is it really needed?
 autoconf
 CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr
-make 
+%{__make} 
 #it is necessary if you are building siag and have installed older version
 cd XawM
 CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr
@@ -46,11 +46,11 @@ cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install prefix=$RPM_BUILD_ROOT/usr 
+%{__make} install prefix=$RPM_BUILD_ROOT/usr 
 install common/{rgb,fonts}.txt $RPM_BUILD_ROOT/usr/share/siag/common
 install common/bitmaps/{handlebg,save,lline,rline}.xpm $RPM_BUILD_ROOT/usr/share/siag/common/bitmaps
 cd XawM
-make install prefix=$RPM_BUILD_ROOT/usr
+%{__make} install prefix=$RPM_BUILD_ROOT/usr
 
 %files
 %defattr(644,root,root,755)

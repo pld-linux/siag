@@ -1,6 +1,6 @@
 Summary:	Siag Office
 Name:		siag
-Version:	3.4.8
+Version:	3.4.10
 Release:	1
 License:	GPL
 Group:		X11/Applications

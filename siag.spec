@@ -1,7 +1,7 @@
 Summary:	Siag Office
 Summary(pl):	Pakiet biurowy Siag Office
 Name:		siag
-Version:	3.5.7
+Version:	3.6.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
@@ -29,6 +29,8 @@ BuildRequires:	libtiff-devel
 BuildRequires:	ncurses-devel
 #BuildRequires:	python-devel
 #BuildRequires:	tcl-devel
+BuildRequires:	Mowitz-devel
+BuildRequires:	neXtaw-devel	
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
@@ -269,17 +271,17 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/mgptotxt
 %attr(755,root,root) %{_bindir}/siaghelp
 %attr(755,root,root) %{_bindir}/siagrun
-%{_datadir}/siag/common/FontDataBase
-%{_datadir}/siag/common/IsoLatin1.enc
-%{_datadir}/siag/common/IsoLatin2.enc
+#%%{_datadir}/siag/common/FontDataBase
+#%%{_datadir}/siag/common/IsoLatin1.enc
+#%%{_datadir}/siag/common/IsoLatin2.enc
 %attr(755,root,root) %{_datadir}/siag/common/any2xpm
 %{_datadir}/siag/common/common.scm
 #here should be something with lang or not?
 %{_datadir}/siag/common/dictionary.*
-%{_datadir}/siag/common/fonts.txt
+#%%{_datadir}/siag/common/fonts.txt
 %{_datadir}/siag/common/position.scm
-%{_datadir}/siag/common/rgb.txt
-%{_datadir}/siag/common/t1lib.config
+#%%{_datadir}/siag/common/rgb.txt
+#%%{_datadir}/siag/common/t1lib.config
 %{_datadir}/siag/common/tools.scm
 %{_datadir}/siag/common/bitmaps/SO3.xpm
 %{_datadir}/siag/common/bitmaps/back.xpm
@@ -449,9 +451,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/siag/pw/pw.scm
 %{_datadir}/siag/pw/styles.scm
 %{_datadir}/siag/common/bitmaps/pw.xpm
-%{_datadir}/siag/common/bitmaps/ctab.xpm
-%{_datadir}/siag/common/bitmaps/ltab.xpm
-%{_datadir}/siag/common/bitmaps/rtab.xpm
+#%%{_datadir}/siag/common/bitmaps/ctab.xpm
+#%%{_datadir}/siag/common/bitmaps/ltab.xpm
+#%%{_datadir}/siag/common/bitmaps/rtab.xpm
 %{_datadir}/siag/common/bitmaps/strike.xpm
 %{_datadir}/siag/common/bitmaps/hfull.xpm
 %{_datadir}/siag/examples/pw/*
@@ -524,4 +526,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -n XawM
 %defattr(644,root,root,755)
 %doc XawM/README*
-%attr(755,root,root) %{_libdir}/libXawM.so.*.*
+#%%attr(755,root,root) %{_libdir}/libXawM.so.*.*

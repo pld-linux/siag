@@ -1,12 +1,12 @@
 Summary:	Siag Office
 Summary(pl):	Pakiet biurowy Siag Office
 Name:		siag
-Version:	3.4.10
-Release:	3
+Version:	3.5.7
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.gz
-# Source0-md5:	7a9ea46554499da20a3746f1111f1ac3
+# Source0-md5:	68952a28b9be117e2072e9e2e1e43fce
 Source1:	gvu.desktop
 Source2:	%{name}.desktop
 Source3:	xfiler.desktop

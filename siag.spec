@@ -6,6 +6,12 @@ License:	GPL
 Group:		X11/Applications
 Group(pl):	X11/Aplikacje
 Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.bz2
+Source1:	gvu.desktop
+Source2:	siag.desktop
+Source3:	xfiler.desktop
+Source4:	egon.desktop
+Source5:	pw.desktop
+Source6:	xedplus.desktop
 URL:		http://siag.nu/
 Patch0:		siag-ref_expander-bug.patch
 #BuildRequires:	tcl-devel
@@ -222,6 +228,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Office/{Editors,Misc,Spreadsheets,Wordprocessors}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Office/Misc
+install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Office/Spreadsheets
+install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Office/Misc
+install %{SOURCE4} $RPM_BUILD_ROOT%{_applnkdir}/Office/Misc
+install %{SOURCE5} $RPM_BUILD_ROOT%{_applnkdir}/Office/Wordprocessors
+install %{SOURCE6} $RPM_BUILD_ROOT%{_applnkdir}/Office/Editors
+
+
 gzip -9nf AUTHORS ChangeLog FILES NEWS NLS README \
           {common,xcommon,siag,pw,egon,siod}/docs/* \
 	  xed/{README,TODO,xedplus.html} \
@@ -314,6 +329,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc siag/docs/strings.html.gz
 #%doc siag/examples/*
 %{_mandir}/man1/siag.1*
+%{_applnkdir}/Office/Spreadsheets/siag.desktop
 
 %files pw
 %defattr(644,root,root,755)
@@ -341,6 +357,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc pw/docs/toolbar.html.gz
 #%doc pw/examples/*
 %{_mandir}/man1/pw.1*
+%{_applnkdir}/Office/Wordprocessors/pw.desktop
 
 %files egon
 %defattr(644,root,root,755)
@@ -367,6 +384,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc egon/docs/toolbar.html.gz
 #%doc egon/examples/*
 %{_mandir}/man1/egon.1*
+%{_applnkdir}/Office/Misc/egon.desktop
 
 %files xedplus
 %defattr(644,root,root,755)
@@ -375,6 +393,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc xed/TODO.gz
 %doc xed/xedplus.html.gz
 %{_mandir}/man1/xedplus.1*
+%{_applnkdir}/Office/Editors/xedplus.desktop
 
 %files xfiler
 %defattr(644,root,root,755)
@@ -387,6 +406,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc xfiler/TODO.gz
 %doc xfiler/xfiler.html.gz
 %{_mandir}/man1/xfiler.1*
+%{_applnkdir}/Office/Misc/xfiler.desktop
 #BITMAPS MISSING!!!
 
 %files plugins
@@ -410,6 +430,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc gvu/README.gz
 %doc gvu/TODO.gz
 %{_mandir}/man1/gvu.1*
+%{_applnkdir}/Office/Misc/gvu.desktop
 
 %files -n XawM
 %defattr(644,root,root,755)

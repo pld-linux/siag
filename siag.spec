@@ -6,6 +6,7 @@ Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://siag.nu/pub/siag/%{name}-%{version}.tar.gz
+# Source0-md5:	7a9ea46554499da20a3746f1111f1ac3
 Source1:	gvu.desktop
 Source2:	%{name}.desktop
 Source3:	xfiler.desktop

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Scheme In A Grid
+Name[pl]=Scheme In A Grid
+Comment=Siag Office spreadsheet
+Comment[pl]=Arkusz kalkulacyjny Siag Office
+Exec=siag
+Icon=siag.xpm
+Terminal=0
+Type=Application

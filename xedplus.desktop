@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Xedplus
+Name[pl]=Xedplus
+Comment=Siag Office text editor
+Comment[pl]=Edytor tekstów Siag Office
+Exec=xedplus
+Icon=xedplus.xpm
+Terminal=0
+Type=Application

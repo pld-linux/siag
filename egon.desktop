@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Egon Animator
+Name[pl]=Egon Animator
+Comment=Siag Office animation software
+Comment[pl]=Program do animacji Siag Office
+Exec=egon
+Icon=egon.xpm
+Terminal=0
+Type=Application

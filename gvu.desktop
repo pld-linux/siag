@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Gvu
+Name[pl]=Gvu
+Comment=Siag Office graphics previewer
+Comment[pl]=Przegl±darka graficzna Siag Office
+Exec=gvu
+Icon=gvu.xpm
+Terminal=0
+Type=Application

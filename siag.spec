@@ -1,7 +1,7 @@
 Summary:	Siag Office
 Name:		siag
 Version:	3.3.10
-Release:	2
+Release: 3
 License:	GPL
 Group:		X11/Applications
 Group(pl):	X11/Aplikacje
@@ -16,7 +16,7 @@ BuildRequires:	XFree86-devel
 BuildRequires:	bzip2-devel
 BuildRequires:	freetype-devel
 BuildRequires:	libjpeg-devel
-BuildRequires:	libpng-devel
+BuildRequires:	libpng >= 1.0.8
 BuildRequires:	libtiff-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	zlib-devel

@@ -146,9 +146,11 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf AUTHORS ChangeLog FILES NEWS NLS README \
-          {common,siag,pw,egon,siod}/docs/* xed/{README,TODO,xedplus.html} \
+          {common,xcommon,siag,pw,egon,siod}/docs/* \
+	  xed/{README,TODO,xedplus.html} \
           xfiler/{README,TODO,xfiler.html} plugins/{README,TODO} \
-	  XawM/README{,.Linux,.XAW3D,.XawM} $RPM_BUILD_ROOT%{_mandir}/man1/*
+	  gvu/{README,TODO} XawM/README{,.Linux,.XAW3D,.XawM} \
+	  $RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT

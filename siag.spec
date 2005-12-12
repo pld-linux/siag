@@ -216,10 +216,10 @@ Siag Office.
 %setup -q
 
 %build
-CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
+CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
 %configure2_13
 %{__make} \
-	CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
+	CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT

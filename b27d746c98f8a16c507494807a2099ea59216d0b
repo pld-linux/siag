@@ -1,0 +1,4 @@
+- split into packages
+- some files relocated between packages
+- more cleaning within %files
+- documentation gzipped

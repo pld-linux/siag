@@ -28,9 +28,9 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	ncurses-devel
+BuildRequires:	neXtaw-devel
 #BuildRequires:	python-devel
 #BuildRequires:	tcl-devel
-BuildRequires:	neXtaw-devel
 Obsoletes:	XawM
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -216,10 +216,10 @@ Siag Office.
 %setup -q
 
 %build
-CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
+CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 %configure2_13
 %{__make} \
-	CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
+	CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT

@@ -1,0 +1,6 @@
+- upgraded to 3.3.11
+- added more files - now it does not coredump
+- added %clean section
+- fixed mess within %build, %install, %files and documentation
+- added ldconfig in %post{in,un}
+- still needs lot of work

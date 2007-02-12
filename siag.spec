@@ -1,5 +1,5 @@
 Summary:	Siag Office
-Summary(pl):	Pakiet biurowy Siag Office
+Summary(pl.UTF-8):   Pakiet biurowy Siag Office
 Name:		siag
 Version:	3.6.0
 Release:	1
@@ -42,15 +42,15 @@ previewer Gvu.
 
 Install this package if you want to use any of Siag Office programs.
 
-%description -l pl
-Siag Office jest ¶ci¶le zintegrowanym, szybkim darmowym pakietem
-biurowym. Sk³ada siê z arkusza kalkulacyjnego Siag, procesora tekstów
-PW, programu do animacji egon, edytora tekstowego XedPlus, zarz±dcy
-plików Xfiler oraz przegl±darki Gvu.
+%description -l pl.UTF-8
+Siag Office jest Å›ciÅ›le zintegrowanym, szybkim darmowym pakietem
+biurowym. SkÅ‚ada siÄ™ z arkusza kalkulacyjnego Siag, procesora tekstÃ³w
+PW, programu do animacji egon, edytora tekstowego XedPlus, zarzÄ…dcy
+plikÃ³w Xfiler oraz przeglÄ…darki Gvu.
 
 %package siag
 Summary:	Scheme In A Grid - Siag Office spreadsheet
-Summary(pl):	Scheme In A Grid - arkusz kalkulacyjny Siag Office
+Summary(pl.UTF-8):   Scheme In A Grid - arkusz kalkulacyjny Siag Office
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -64,20 +64,20 @@ Lotus 1-2-3, Postscript, HTML Tables, Scheme Code, Troff Tables, LaTeX
 Tables. Additional formats can be supported by using external
 converters, such as xls2csv for Microsoft Excel.
 
-%description siag -l pl
-Siag jest arkuszem kalkulacyjnym bazuj±cym na systemie X Window oraz
-jêzyku Scheme. Posiada wiele, bardzo wiele funkcji. Jest wyposa¿ony
-nawet w serwer WWW! Siag jest czê¶ci± pakietu biurowego Siag Office.
+%description siag -l pl.UTF-8
+Siag jest arkuszem kalkulacyjnym bazujÄ…cym na systemie X Window oraz
+jÄ™zyku Scheme. Posiada wiele, bardzo wiele funkcji. Jest wyposaÅ¼ony
+nawet w serwer WWW! Siag jest czÄ™Å›ciÄ… pakietu biurowego Siag Office.
 
-Wspierane formaty plików: Siag, warto¶ci oddzielane przecinkami (Comma
+Wspierane formaty plikÃ³w: Siag, wartoÅ›ci oddzielane przecinkami (Comma
 Separated Values), tekst, Lotus 1-2-3, Postscript, tabelki HTML,
-¼ród³o Scheme, tabelki Troff oraz Latex. Dodatkowe formaty mog± byæ
-obs³u¿one przy u¿yciu zewnêtrznych konwerterów, np. xls2csv dla
+ÅºrÃ³dÅ‚o Scheme, tabelki Troff oraz Latex. Dodatkowe formaty mogÄ… byÄ‡
+obsÅ‚uÅ¼one przy uÅ¼yciu zewnÄ™trznych konwerterÃ³w, np. xls2csv dla
 Microsoft Excel.
 
 %package pw
 Summary:	Pathetic Writer - Siag Office word processor
-Summary(pl):	Pathetic Writer - procesor tekstów Siag Office
+Summary(pl.UTF-8):   Pathetic Writer - procesor tekstÃ³w Siag Office
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -89,16 +89,16 @@ Supported file formats: Pathetic Writer, Plain Text, Postscript,
 Hypertext Markup Language, Rich Text Format. Some of them require
 using external converter called WV.
 
-%description pw -l pl
-Pathetic Writer jest procesorem tekstów bazowanym na systemie X
-Window. Jest on czê¶ci± pakietu biurowego Siag Office.
+%description pw -l pl.UTF-8
+Pathetic Writer jest procesorem tekstÃ³w bazowanym na systemie X
+Window. Jest on czÄ™Å›ciÄ… pakietu biurowego Siag Office.
 
-Wspierane formaty plików: Pathetic Writer, tekst, Postscript, HTML,
-RTF. Niektóre z nich wymagaj± zewnêtrznego konwertera o nazwie WV.
+Wspierane formaty plikÃ³w: Pathetic Writer, tekst, Postscript, HTML,
+RTF. NiektÃ³re z nich wymagajÄ… zewnÄ™trznego konwertera o nazwie WV.
 
 %package egon
 Summary:	Egon Animator - Siag Office animation software
-Summary(pl):	Egon Animator - oprogramowanie do animacji Siag Office
+Summary(pl.UTF-8):   Egon Animator - oprogramowanie do animacji Siag Office
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
@@ -114,23 +114,23 @@ Postscript, Text, HTML, Magic Point, MS Powerpoint (pptHtml required).
 
 Sorry but it is currently useless - it segfaults.
 
-%description egon -l pl
-Egon Animator jest narzêdziem do tworzenia animacji bazowanym na
-systemie X Window. Zasada dzia³ania polega na tym, ¿e "obiekty"
-(prostok±ty, linie, obrazki itd.) s± dodawane do "sceny", gdzie
-wykonuj± odpowiednie polecenia wskazuj±ce, kiedy i gdzie maj± siê
-pojawiæ. Egon Animator jest czê¶ci± pakietu biurowego Siag Office.
+%description egon -l pl.UTF-8
+Egon Animator jest narzÄ™dziem do tworzenia animacji bazowanym na
+systemie X Window. Zasada dziaÅ‚ania polega na tym, Å¼e "obiekty"
+(prostokÄ…ty, linie, obrazki itd.) sÄ… dodawane do "sceny", gdzie
+wykonujÄ… odpowiednie polecenia wskazujÄ…ce, kiedy i gdzie majÄ… siÄ™
+pojawiÄ‡. Egon Animator jest czÄ™Å›ciÄ… pakietu biurowego Siag Office.
 
-Wspierane formaty plików: Egon Animator, ¼ród³o w jêzyku C, animowany
+Wspierane formaty plikÃ³w: Egon Animator, ÅºrÃ³dÅ‚o w jÄ™zyku C, animowany
 GIF, Postscript, tekst, HTML, Magic Point, MS Powerpoint (wymagany
 program pptHtml).
 
-Niestety chwilowo program jest bezu¿yteczny, gdy¿ wywo³uje naruszenie
-ochrony pamiêci.
+Niestety chwilowo program jest bezuÅ¼yteczny, gdyÅ¼ wywoÅ‚uje naruszenie
+ochrony pamiÄ™ci.
 
 %package xedplus
 Summary:	Siag Office simple but powerful text editor
-Summary(pl):	Prosty lecz wydajny edytor tekstów Siag Office
+Summary(pl.UTF-8):   Prosty lecz wydajny edytor tekstÃ³w Siag Office
 Group:		X11/Applications/Editors
 Requires:	%{name} = %{version}-%{release}
 
@@ -139,14 +139,14 @@ Simple text editor for editing config files or source code. It
 contains everything you need including even commands to call sed.
 Xedplus is a part of free Siag Office package.
 
-%description xedplus -l pl
-Prosty edytor tekstów do edycji plików konfiguracyjnych czy kodów
-¼ród³owych. Posiada wszystko, czego potrzebujesz - nawet komendy, aby
-wywo³aæ seda. Xedplus jest czê¶ci± pakietu biurowego Siag Office.
+%description xedplus -l pl.UTF-8
+Prosty edytor tekstÃ³w do edycji plikÃ³w konfiguracyjnych czy kodÃ³w
+ÅºrÃ³dÅ‚owych. Posiada wszystko, czego potrzebujesz - nawet komendy, aby
+wywoÅ‚aÄ‡ seda. Xedplus jest czÄ™Å›ciÄ… pakietu biurowego Siag Office.
 
 %package xfiler
 Summary:	Siag Office file manager
-Summary(pl):	Zarz±dca plików Siag Office
+Summary(pl.UTF-8):   ZarzÄ…dca plikÃ³w Siag Office
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -155,14 +155,14 @@ Simple and easy to use file manager. It contains basic commands to
 manage your filesystem. Suits almost all needs of plain user. Xfiler
 is a part of free Siag Office package.
 
-%description xfiler -l pl
-Prosty i ³atwy w u¿yciu zarz±dca plików. Posiada podstawowe polecenia
-zarz±dzania systemem plików. Spe³nia potrzeby zwyk³ego u¿ytkownika.
-Xfiler jest czê¶ci± pakietu biurowego Siag Office.
+%description xfiler -l pl.UTF-8
+Prosty i Å‚atwy w uÅ¼yciu zarzÄ…dca plikÃ³w. Posiada podstawowe polecenia
+zarzÄ…dzania systemem plikÃ³w. SpeÅ‚nia potrzeby zwykÅ‚ego uÅ¼ytkownika.
+Xfiler jest czÄ™Å›ciÄ… pakietu biurowego Siag Office.
 
 %package plugins
 Summary:	Plugins to use with Siag Office package
-Summary(pl):	Wtyczki do u¿ywania z pakietem Siag Office
+Summary(pl.UTF-8):   Wtyczki do uÅ¼ywania z pakietem Siag Office
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -181,23 +181,23 @@ not mentioned here):
   an example of a simple plugin, in that it contains all the necessary
   code to make a plugin of a normal X program.
 
-%description plugins -l pl
+%description plugins -l pl.UTF-8
 Zawiera kilka wtyczek dla pakietu biurowego Siag Office (jest ich
-trochê wiêcej ni¿ opisanych tutaj):
+trochÄ™ wiÄ™cej niÅ¼ opisanych tutaj):
 
-- The Image Plugin - wy¶wietla najbardziej popularne formaty plików
-  je¶li jest zainstalowany zestaw konwerterów NETPBM. W przeciwnym
-  wypadku bêdzie wy¶wietla³ tylko grafikê w formacie XPM.
-- The Dummy Plugin - dzia³a jako swoisty interfejs pomiêdzy Siagiem a
-  inna aplikacj±. Komunikuje siê protoko³em wtyczek ze Siag i robi, co
-  potrafi, aby zarz±dzaæ zewnêtrzn± aplikacj±.
-- The Hello Plugin - stworzony dla celów demonstracyjnych: wy¶wietla
-  komunikat "Hello, World" w swoim oknie. Jest doskona³ym przyk³adem,
-  który mo¿e pos³u¿yæ do stworzenia w pe³ni dzia³aj±cej wtyczki.
+- The Image Plugin - wyÅ›wietla najbardziej popularne formaty plikÃ³w
+  jeÅ›li jest zainstalowany zestaw konwerterÃ³w NETPBM. W przeciwnym
+  wypadku bÄ™dzie wyÅ›wietlaÅ‚ tylko grafikÄ™ w formacie XPM.
+- The Dummy Plugin - dziaÅ‚a jako swoisty interfejs pomiÄ™dzy Siagiem a
+  inna aplikacjÄ…. Komunikuje siÄ™ protokoÅ‚em wtyczek ze Siag i robi, co
+  potrafi, aby zarzÄ…dzaÄ‡ zewnÄ™trznÄ… aplikacjÄ….
+- The Hello Plugin - stworzony dla celÃ³w demonstracyjnych: wyÅ›wietla
+  komunikat "Hello, World" w swoim oknie. Jest doskonaÅ‚ym przykÅ‚adem,
+  ktÃ³ry moÅ¼e posÅ‚uÅ¼yÄ‡ do stworzenia w peÅ‚ni dziaÅ‚ajÄ…cej wtyczki.
 
 %package gvu
 Summary:	Siag Office graphics previewer
-Summary(pl):	Przegl±darka graficzna Siag Office
+Summary(pl.UTF-8):   PrzeglÄ…darka graficzna Siag Office
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -206,10 +206,10 @@ Gvu allows you to easily view Postscript (*.ps) and Encapsulated
 Postsript (*.eps) files. It uses Aladdin Ghostscript software to
 process files. Gvu is a part of free Siag Office package.
 
-%description gvu -l pl
-Gvu umo¿liwia ³atwe przegl±danie plików w formacie Postscript (*.ps)
+%description gvu -l pl.UTF-8
+Gvu umoÅ¼liwia Å‚atwe przeglÄ…danie plikÃ³w w formacie Postscript (*.ps)
 oraz Encapsulated Postscript (*.eps). Wykorzystuje w tym celu
-oprogramowanie Alladin Ghostscript. Gvu jest czê¶ci± pakietu biurowego
+oprogramowanie Alladin Ghostscript. Gvu jest czÄ™Å›ciÄ… pakietu biurowego
 Siag Office.
 
 %prep

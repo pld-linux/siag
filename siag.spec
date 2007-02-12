@@ -1,5 +1,5 @@
 Summary:	Siag Office
-Summary(pl.UTF-8):   Pakiet biurowy Siag Office
+Summary(pl.UTF-8):	Pakiet biurowy Siag Office
 Name:		siag
 Version:	3.6.0
 Release:	1
@@ -50,7 +50,7 @@ plików Xfiler oraz przeglądarki Gvu.
 
 %package siag
 Summary:	Scheme In A Grid - Siag Office spreadsheet
-Summary(pl.UTF-8):   Scheme In A Grid - arkusz kalkulacyjny Siag Office
+Summary(pl.UTF-8):	Scheme In A Grid - arkusz kalkulacyjny Siag Office
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -77,7 +77,7 @@ Microsoft Excel.
 
 %package pw
 Summary:	Pathetic Writer - Siag Office word processor
-Summary(pl.UTF-8):   Pathetic Writer - procesor tekstów Siag Office
+Summary(pl.UTF-8):	Pathetic Writer - procesor tekstów Siag Office
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -98,7 +98,7 @@ RTF. Niektóre z nich wymagają zewnętrznego konwertera o nazwie WV.
 
 %package egon
 Summary:	Egon Animator - Siag Office animation software
-Summary(pl.UTF-8):   Egon Animator - oprogramowanie do animacji Siag Office
+Summary(pl.UTF-8):	Egon Animator - oprogramowanie do animacji Siag Office
 Group:		X11/Applications/Graphics
 Requires:	%{name} = %{version}-%{release}
 
@@ -130,7 +130,7 @@ ochrony pamięci.
 
 %package xedplus
 Summary:	Siag Office simple but powerful text editor
-Summary(pl.UTF-8):   Prosty lecz wydajny edytor tekstów Siag Office
+Summary(pl.UTF-8):	Prosty lecz wydajny edytor tekstów Siag Office
 Group:		X11/Applications/Editors
 Requires:	%{name} = %{version}-%{release}
 
@@ -146,7 +146,7 @@ wywołać seda. Xedplus jest częścią pakietu biurowego Siag Office.
 
 %package xfiler
 Summary:	Siag Office file manager
-Summary(pl.UTF-8):   Zarządca plików Siag Office
+Summary(pl.UTF-8):	Zarządca plików Siag Office
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -162,7 +162,7 @@ Xfiler jest częścią pakietu biurowego Siag Office.
 
 %package plugins
 Summary:	Plugins to use with Siag Office package
-Summary(pl.UTF-8):   Wtyczki do używania z pakietem Siag Office
+Summary(pl.UTF-8):	Wtyczki do używania z pakietem Siag Office
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -197,7 +197,7 @@ trochę więcej niż opisanych tutaj):
 
 %package gvu
 Summary:	Siag Office graphics previewer
-Summary(pl.UTF-8):   Przeglądarka graficzna Siag Office
+Summary(pl.UTF-8):	Przeglądarka graficzna Siag Office
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 

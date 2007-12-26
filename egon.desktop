@@ -1,11 +1,10 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=Egon Animator
 Name[pl]=Egon Animator
 Comment=Siag Office animation software
 Comment[pl]=Program do animacji Siag Office
 Exec=egon
-Icon=egon.png
+Icon=egon
 Terminal=false
 Type=Application
 Categories=Graphics;
